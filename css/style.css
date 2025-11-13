@@ -1,0 +1,129 @@
+/* All pages formatting */
+
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "Noto Serif JP", Source Sans Pro, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    height: 100%;
+    margin: 0px;
+    background-color: #183341;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    color: #9E6313;
+}
+h2 {
+    color: #462B08;
+    font-family: "Playfair Display Italic", serif;
+}
+h3 {
+    color: #565183;
+    font-family: "Playfair Display Italic", serif;
+}
+h4 {
+    color: #462B08;
+}
+
+a {
+    color: #9E6313;
+}
+a:hover {
+    color: #5e3c0b;
+}
+
+button {
+    background-color: #462B08;
+    border: none;
+    color: #FFE5C3;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+button:hover {
+    background-color: #382206;
+}
+button.active {
+    font-weight: bold;
+    background-color: #573202;
+}
+
+.titleBar {
+    background-color: #183341;
+    color: #faf7f0;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin-top: 0px;
+}
+
+footer {
+    background-color: #183341;
+    padding: 10px;
+    text-align: center;
+    color: #D9C7A3;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 0px;
+}
+
+.contentArea {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    z-index: 1;
+    grid-template-rows: 1fr auto;
+}
+.grid-container {
+    background-color: #2E617C;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+    grid-template-rows: auto;
+}
+
+/* Index page formatting */
+
+.index-item-1 {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.index-item-2 {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* About page formatting */
+
+.about-item-1 {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.about-item-2 {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+}
