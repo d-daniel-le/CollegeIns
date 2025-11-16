@@ -94,5 +94,5 @@ signupForm.addEventListener("submit", function (e) {
 
     signupButton.style.display = "none";
 
-    // document.getElementById("resultsPage").style.display = "block";
+    document.getElementById("results-page").style.display = "block";
 });
