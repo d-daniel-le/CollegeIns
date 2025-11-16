@@ -22,14 +22,42 @@
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="index-item-1">
-                    <h3>Hello World.</h3>
+                <div class="dashboard-item-1">
+                    <h3>Please click on the images to interact with the graphs</h3>
                 </div>
-                <div class="index-item-2">
-                    <h3>This is the dashboard page.</h3>
+                <div class="dashboard-item-2">
+                    <h2>Student headcounts, FTE, enrollements, and credits</h2>
+                    <img src="../images/dashboard/dashboardBarGraph.png" alt="A bar graph representing student headcounts, FTE, enrollments, and credits." width="100%" onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/BellevueCollegeEnrollment/SummaryofBCEnrollment?%3Aembed=y&%3AisGuestRedirectFromVizportal=y">
+                    <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/BellevueCollegeEnrollment/SummaryofBCEnrollment?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
+                </div>
+                <div class="dashboard-item-3">
+                    <h2>Number of graduates by credidential</h2>
+                    <img src="../images/dashboard/dashboardLineChart1.png" alt="A line chart representing the number of graduates by credidential." width="100%" onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ProgramGraduates/Graduates?%3Aembed=y&%3AisGuestRedirectFromVizportal=y">
+                    <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/ProgramGraduates/Graduates?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
+                </div>
+                <div class="dashboard-item-4">
+                    <h2>Bellevue College performance toward student success goals</h2>
+                    <img src="../images/dashboard/dashboardLineChart2.png" alt="A line chart representing Bellevue College performance toward student success goals." width="100%" onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y">
+                    <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
+                </div>
+                <div class="dashboard-item-5">
+                    <h2>Headcount 2024-2025</h2>
+                    <h1>21,115 students</h1>
+                </div>
+                <div class="dashboard-item-6">
+                    <h2>Annual cost of attendance</h2>
+                    <h1>$27,959</h1>
                 </div>
             </div>
         </div>
-        <script src="./js/index.js"></script>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <iframe id="modal-iframe"></iframe>
+            </div>
+        </div>
+
+        <script src="../js/index.js"></script>
     </body>
 </html>
