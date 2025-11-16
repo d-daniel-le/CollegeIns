@@ -95,14 +95,16 @@ footer {
 
 /* Index page formatting */
 
-.index-item{
-    grid-column: 1 / -1;
+.index-item-1 {
+    grid-column: 1 / span 3;
     grid-row: 1;
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
 }
 
-.index-item input{
+.index-item-1 input {
     border: none;
     border-radius: 25px;
     padding: 1% 1% 1% 1%;
@@ -111,34 +113,28 @@ footer {
     text-align: center;
 }
 
-
 /* About page formatting */
 
 .about-item-1 {
     grid-column: 1;
     grid-row: 1;
 }
-
 .about-item-2 {
     grid-column: 2;
     grid-row: 1;
 }
-
 .about-item-3 {
     grid-column: 3;
     grid-row: 1;
 }
-
 .about-item-4 {
     grid-column: 1;
     grid-row: 2;
 }
-
 .about-item-5 {
     grid-column: 2;
     grid-row: 2;
 }
-
 .about-item-6 {
     grid-column: 3;
     grid-row: 2;
@@ -162,7 +158,6 @@ footer {
     grid-column: 1;
     grid-row: 1;
 }
-
 .analysis-item-2 {
     grid-column: 2;
     grid-row: 1;
@@ -189,27 +184,22 @@ footer {
     grid-column: 1 / span 3;
     grid-row: 1;
 }
-
 .dashboard-item-2 {
     grid-column: 1;
     grid-row: 2;
 }
-
 .dashboard-item-3 {
     grid-column: 2;
     grid-row: 2;
 }
-
 .dashboard-item-4 {
     grid-column: 3;
     grid-row: 2;
 }
-
 .dashboard-item-5 {
     grid-column: 1;
     grid-row: 3;
 }
-
 .dashboard-item-6 {
     grid-column: 3;
     grid-row: 3;
@@ -235,21 +225,50 @@ footer {
 /* Login page formatting */
 
 .login-item-1 {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.login-item-2 {
     grid-column: 2;
     grid-row: 1;
 }
-
-.login-item-1,
 .login-item-2 {
+    grid-column: 2;
+    grid-row: 2;
+}
+.login-item-3 {
+    grid-column: 2;
+    grid-row: 2;
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
     padding: 10px;
+}
+
+#signup {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+}
+
+#signup .row {
+    margin: auto;
+    display: flex;
+    gap: 25px;
+}
+
+#signup input {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+#signup button {
+    width: 50%;
+    box-sizing: border-box;
 }
 
 /* Resources page formatting */

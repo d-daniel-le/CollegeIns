@@ -16,21 +16,47 @@
             <button onclick="location.href='analysis.html'">Analysis</button>
             <button onclick="location.href='summary.html'">Summary</button>
             <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='dashboard.html'">Login</button>
+            <button onclick="location.href='login.html'">Login</button>
             <button onclick="location.href='about.html'">About</button>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
                 <div class="login-item-1">
-                    <h3>Hello World.</h3>
+                    <button id="signupBtn" onclick="showSection('signup')">Sign up</button>
                 </div>
+
                 <div class="login-item-2">
-                    <h3>This is the Login page.</h3>
+                    <section id="signup" style="display:none;">
+                        <h2>Sign Up</h2>
+
+                        <form id="signupForm">
+                            <div class="row">
+                                <input type="text" name="firstname" placeholder="First Name">
+                                <input type="text" name="lastname" placeholder="Last Name">
+                            </div>
+                            <div class="row">
+                                <input type="text" name="phone" placeholder="Phone">
+                                <input type="text" name="zipcode" placeholder="Zipcode">
+                            </div>
+
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="text" name="password" placeholder="Password">
+                            <input type="text" name="passwordconfirm" placeholder="Confirm Password">
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </section>
                 </div>
+
+                <section id="resultsPage" style="display:none;">
+                    <div class="login-item-3">
+                        <h2>Results</h2>
+                        <div id="results"></div>
+                    </div>
+                </section>
             </div>
         </div>
-        
         <script src="../js/index.js"></script>
     </body>
 </html>
