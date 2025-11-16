@@ -95,23 +95,22 @@ footer {
 
 /* Index page formatting */
 
-.index-item-1 {
-    grid-column: 1;
+.index-item{
+    grid-column: 1 / -1;
     grid-row: 1;
-}
-
-.index-item-2 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.index-item-1,
-.index-item-2 {
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
-    margin: 10px;
-    padding: 10px;
 }
+
+.index-item input{
+    border: none;
+    border-radius: 25px;
+    padding: 1% 1% 1% 1%;
+    width: 70%;
+    margin-top: 0%;
+    text-align: center;
+}
+
 
 /* About page formatting */
 
