@@ -103,6 +103,8 @@ footer {
     border-radius: 25px;
     margin: 10px;
     padding: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .index-item-1 input {
