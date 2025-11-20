@@ -305,17 +305,27 @@ footer {
 /* Resources page formatting */
 
 .resources-item-1 {
-    grid-column: 1;
+    grid-column: 1 / span 3;
     grid-row: 1;
 }
 
 .resources-item-2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+.resources-item-3 {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
+}
+.resources-item-4 {
+    grid-column: 3;
+    grid-row: 2;
 }
 
 .resources-item-1,
-.resources-item-2 {
+.resources-item-2,
+.resources-item-3,
+.resources-item-4 {
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
