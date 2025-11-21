@@ -7,7 +7,7 @@ body {
     text-align: center;
     font-family: "Noto Serif JP", Source Sans Pro, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     height: 100%;
-    margin: 0px;
+    margin: 0px auto;
     background-color: #739090;
 }
 
@@ -77,11 +77,12 @@ footer {
     padding: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
-    text-align: center;
+    text-align: right;
     color: #D9C7A3;
     position: relative;
     z-index: 10;
     margin-bottom: 0px;
+    margin-right: 50px;
 }
 
 .footer-links {
@@ -329,6 +330,98 @@ footer {
     cursor: pointer;
 }
 
+#login {
+    max-width: 250px;
+    height: 300px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    grid-column: 2;
+}
+
+#login input {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.clear-button-signup {
+    background: none;
+    border: none;
+    padding-left: 15px;
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.clear-button-login {
+    background: none;
+    border: none;
+    padding-left: 5px;
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.login-item-4 p {
+    margin: 0;
+    white-space: nowrap;
+}
+.login-item-4 {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    align-items: center;
+    padding-left: 45px;
+}
+
+.form-grid {
+    display: grid;
+    max-width: fit-content;
+    margin: 30px auto 5px;
+    border: 1px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(250, 247, 240, 0.92);
+    font-family: "Playfair Display Italic", serif;
+}
+
+.form-grid input, select, button{
+    color: white;
+    border: 1px;
+    border-radius: 5px;
+    font-family: "Playfair Display Italic", serif;
+    margin: 1px;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload {
+    display: inline-block;
+    font-family: "Playfair Display Italic", serif;
+    margin: 10px;
+    padding: 5px;
+    color: white;
+    background-color: #39606A;
+    border-radius: 10px;
+}
+
+.file-upload:hover {
+    background-color: #2A444B;
+}
+
 /* Resources page formatting */
 
 .resources-item-1 {
@@ -412,59 +505,4 @@ footer {
     font-size: 1.2rem;
     cursor: pointer;
     color: #444;
-}
-
-#login {
-    max-width: 250px;
-    height: 300px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    border: solid;
-    border-radius: 10px;
-    background-color: white;
-    padding: 20px;
-    grid-column: 2;
-}
-
-#login input {
-    padding: 8px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-}
-
-.clear-button-signup {
-    background: none;
-    border: none;
-    padding-left: 15px;
-    color: black;
-    cursor: pointer;
-    text-decoration: underline;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.clear-button-login {
-    background: none;
-    border: none;
-    padding-left: 5px;
-    color: black;
-    cursor: pointer;
-    text-decoration: underline;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.login-item-4 p {
-    margin: 0;
-    white-space: nowrap;
-}
-.login-item-4 {
-    display: flex;
-    grid-column: 2;
-    grid-row: 1;
-    align-items: center;
-    padding-left: 45px;
 }
