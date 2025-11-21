@@ -50,6 +50,47 @@
                 </div>
             </div>
         </div>
+        
+        <p class="request">Provide your email address for updates on new data:</p>
+        <input class="request" type="email" id="email" name="email"><br>
+
+        <label class="request" for="webhook">Alternatively give a URL for automated updates:</label>
+        <input type="url" id="webhook" name="webhook" placeholder="https://example.com/endpoint"><br>
+
+        <label class="request" for="phone">Phone number (optional):</label>
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890"><br>
+
+        <p class="request">What type of data do you want to recieve?:</p>
+        <input type="checkbox" id="graphs" name="graphs" value="graphs">
+        <label for="graphs"> Graphs</label>
+        <input type="checkbox" id="headcount" name="headcount" value="headcount">
+        <label for="headcount"> Headcount</label>
+        <input type="checkbox" id="coa" name="coa" value="coa">
+        <label for="coa"> Cost of Attendance</label><br>
+
+        <label class="request" for="slider">Frequency of Updates: <span id="slider-value">6</span></label>
+        <input type="range" id="slider" min="1" max="12" value="6"><br>
+
+        <label class="request" for="reason">Reason for wanting updates:</label>
+        <select id="reason" name="reason">
+            <option value="stay-informed">Stay informed about new data</option>
+            <option value="research">Research or class project</option>
+            <option value="program-planning">Planning for a program or major</option>
+            <option value="institutional-reporting">Institutional planning or reporting</option>
+            <option value="community-interest">Community or general interest</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label class="request" for="update-date">When do you want to start receiving updates?</label>
+        <input type="date" id="update-date" name="update-date"><br>
+
+        <label class="request" for="theme-color">Preferred email theme color:</label>
+        <input type="color" id="theme-color" name="theme-color" value="#183341"><br>
+
+        <label class="request" for="upload">Upload a reference file (optional):</label>
+        <input class="request" type="file" id="upload" name="upload"><br>
+
+        <button type="submit">Submit</button>
 
         <div class="modal" id="modal">
             <div class="modal-content">
