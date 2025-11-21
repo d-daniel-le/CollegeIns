@@ -48,55 +48,55 @@
                     <h2>Annual cost of attendance</h2>
                     <h1>$27,959</h1>
                 </div>
+
+                <div class="dashboard-item-7">
+                    <br>
+                    <label for="email">Provide your email address for updates on new data:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="webhook">(Optional) Give a URL for automated updates:</label>
+                    <input type="url" id="webhook" name="webhook" placeholder="https://example.com/endpoint"><br><br>
+                    <label for="phone">Phone number (optional):</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890"><br><br>
+                    <label class="checkbox">What type of data do you want to recieve?</label>
+                    
+                    <div>
+                        <input type="checkbox" id="graphs" name="graphs" value="graphs">
+                        <label for="graphs"> Graphs</label>
+                        <input type="checkbox" id="headcount" name="headcount" value="headcount">
+                        <label for="headcount"> Headcount</label>
+                        <input type="checkbox" id="coa" name="coa" value="coa">
+                        <label for="coa"> Cost of Attendance</label><br><br>
+                    </div>
+            
+                    <label for="slider">Frequency of Updates: <span id="slider-value">6</span></label>
+                    <input type="range" id="slider" min="1" max="12" value="6"><br><br>
+                    <label for="reason">Reason for wanting updates: </label>
+                    
+                    <select id="reason" name="reason">
+                        <option value="stay-informed">Stay informed about new data</option>
+                        <option value="research">Research or class project</option>
+                        <option value="program-planning">Planning for a program or major</option>
+                        <option value="institutional-reporting">Institutional planning or reporting</option>
+                        <option value="community-interest">Community or general interest</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+            
+                    <label for="update-date">When do you want to start receiving updates?</label>
+                    <input type="date" id="update-date" name="update-date"><br><br>
+            
+                    <div>
+                        <label for="theme-color">Preferred email theme color:</label>
+                        <input type="color" id="theme-color" name="theme-color" value="#183341"><br><br>
+                    </div>
+            
+                    <label class="file-upload" for="upload" style="color:#D1D6CF;">Upload a reference file (optional)
+                        <input type="file" id="upload" name="upload">
+                    </label><br><br>
+                    
+                    <button type="submit">Submit</button>
+                </div>
             </div>
         </div>
-        
-
-        <form class="form-grid">
-            <label for="email">Provide your email address for updates on new data: </label>
-            <input type="email" id="email" name="email"><br>
-            <label for="webhook">Alternatively give a URL for automated updates: </label>
-            <input type="url" id="webhook" name="webhook" placeholder="https://example.com/endpoint"><br>
-            <label for="phone">Phone number (optional): </label>
-            <input type="tel" id="phone" name="phone" placeholder="123-456-7890"><br>
-            <label class="checkbox">What type of data do you want to recieve? </label>
-            
-            <div>
-                <input type="checkbox" id="graphs" name="graphs" value="graphs">
-                <label for="graphs"> Graphs</label>
-                <input type="checkbox" id="headcount" name="headcount" value="headcount">
-                <label for="headcount"> Headcount</label>
-                <input type="checkbox" id="coa" name="coa" value="coa">
-                <label for="coa"> Cost of Attendance</label><br>
-            </div>
-    
-            <label for="slider">Frequency of Updates: <span id="slider-value">6</span></label>
-            <input type="range" id="slider" min="1" max="12" value="6"><br>
-            <label for="reason">Reason for wanting updates: </label>
-            
-            <select id="reason" name="reason">
-                <option value="stay-informed">Stay informed about new data</option>
-                <option value="research">Research or class project</option>
-                <option value="program-planning">Planning for a program or major</option>
-                <option value="institutional-reporting">Institutional planning or reporting</option>
-                <option value="community-interest">Community or general interest</option>
-                <option value="other">Other</option>
-            </select><br>
-    
-            <label for="update-date">When do you want to start receiving updates?</label>
-            <input type="date" id="update-date" name="update-date"><br>
-    
-            <div>
-                <label for="theme-color">Preferred email theme color:</label>
-                <input type="color" id="theme-color" name="theme-color" value="#183341"><br>
-            </div>
-    
-            <label class="file-upload" for="upload">Upload a reference file (optional)
-                <input type="file" id="upload" name="upload"><br>
-            </label>
-    
-            <button type="submit">Submit</button>
-        </form>
 
         <div class="modal" id="modal">
             <div class="modal-content">

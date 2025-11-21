@@ -235,18 +235,60 @@ footer {
     grid-column: 3;
     grid-row: 3;
 }
+.dashboard-item-7 {
+    grid-column: 2;
+    grid-row: 3;
+    border: 1px;
+    font-family: "Playfair Display Italic", serif;
+}
+
+.dashboard-item-7 input,
+.dashboard-item-7 label {
+    color: #364845;
+    border: 1px;
+    border-radius: 5px;
+    /* font-family: "Playfair Display Italic", serif; */
+    margin: 1px;
+}
+
+.submit {
+    color: #39606A;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload {
+    display: inline-block;
+    font-family: "Playfair Display Italic", serif;
+    background-color: #39606A;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.file-upload:hover {
+    background-color: #2A444B;
+}
 
 .dashboard-item-1,
 .dashboard-item-2,
 .dashboard-item-3,
 .dashboard-item-4,
 .dashboard-item-5,
-.dashboard-item-6 {
+.dashboard-item-6,
+.dashboard-item-7 {
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
     padding: 10px;
 }
+
 
 /* iframe {
     border: 1px solid black;
@@ -277,7 +319,7 @@ footer {
     width: 100%;
 }
 
-.login-item-3 button{
+.login-item-3 button {
     padding-left: 15px;
     padding-right: 15px;
     margin: 5px;
@@ -383,43 +425,6 @@ footer {
     grid-row: 1;
     align-items: center;
     padding-left: 45px;
-}
-
-.form-grid {
-    display: grid;
-    max-width: fit-content;
-    margin: 30px auto 5px;
-    border: 1px;
-    border-radius: 15px;
-    padding: 20px;
-    background-color: rgba(250, 247, 240, 0.92);
-    font-family: "Playfair Display Italic", serif;
-}
-
-.form-grid input, select, button{
-    color: white;
-    border: 1px;
-    border-radius: 5px;
-    font-family: "Playfair Display Italic", serif;
-    margin: 1px;
-}
-
-.file-upload input[type="file"] {
-    display: none;
-}
-
-.file-upload {
-    display: inline-block;
-    font-family: "Playfair Display Italic", serif;
-    margin: 10px;
-    padding: 5px;
-    color: white;
-    background-color: #39606A;
-    border-radius: 10px;
-}
-
-.file-upload:hover {
-    background-color: #2A444B;
 }
 
 /* Resources page formatting */
