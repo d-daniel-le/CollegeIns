@@ -82,6 +82,9 @@ function display(){
             getResource3.hidden = false;
             getResource4.hidden = false;
         }
+        else{
+            console.log("No Analysis, Summary or Resources was found on this page. ")
+        }
     }
     else{
         getNavLogin.hidden = false;
@@ -105,6 +108,9 @@ function display(){
             getResource2.hidden = true;
             getResource3.hidden = true;
             getResource4.hidden = true;
+        }
+        else{
+            console.log("No Analysis, Summary or Resources was found on this page. ")
         }
     }
 
