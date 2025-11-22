@@ -7,9 +7,14 @@
         <meta name="robots" content="noindex, nofollow">
         <title>CollegeIns - Resources</title>
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <style>
+            button[hidden]{
+                display: none;
+            }
+        </style>
     </head>
     
-    <body>
+    <body onload="display()">
         <div class="title-bar">
             <h1>Resources | CollegeIns</h1>
             <button onclick="location.href='../index.html'">Home</button>
@@ -17,17 +22,18 @@
             <button onclick="location.href='analysis.html'">Analysis</button>
             <button onclick="location.href='summary.html'">Summary</button>
             <button class="active" onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
+            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
             <button onclick="location.href='about.html'">About</button>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="resources-item-1">
+                <div class="resources-item-1" id="resource-1" hidden>
                     <h3>Bellevue College Support and Student Resources</h3>
                 </div>
 
-                <div class="resources-item-2">
+                <div class="resources-item-2" id="resource-2" hidden>
                     <h2>Academic Resources</h2>
                     <ul>
                         <li><a href="https://www.bellevuecollege.edu/asc/tutoring/">Tutoring Center</a></li>
@@ -36,7 +42,7 @@
                     </ul>
                 </div>
 
-                <div class="resources-item-3">
+                <div class="resources-item-3" id="resource-3" hidden>
                     <h2>Enrollment Services</h2>
                     <ul>
                         <li><a href="https://www.bellevuecollege.edu/current-students/enrollment/">Enrollment</a></li>
@@ -51,7 +57,7 @@
                     </ul>
                 </div>
 
-                <div class="resources-item-4">
+                <div class="resources-item-4" id="resource-4" hidden>
                     <h2>Student Life & Support</h2>
                     <ul>
                         <li><a href="https://www.bellevuecollege.edu/counseling/">Counseling Services</a></li>
@@ -60,6 +66,11 @@
                         </li>
                         <li><a href="https://www.bellevuecollege.edu/drc/">Disability Resource Center</a></li>
                     </ul>
+                </div>
+
+
+                <div class="resources-item-5" id="resource-5" hidden>
+                    <p>Please signin or signup for an account to view the content of this page. </p>
                 </div>
             </div>
         </div>

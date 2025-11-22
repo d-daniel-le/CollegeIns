@@ -7,9 +7,13 @@
         <meta name="robots" content="noindex, nofollow">
         <title>CollegeIns - Home</title>
         <link href="../css/style.css" rel="stylesheet" type="text/css">
-        <style></style>
+        <style>
+            button[hidden]{
+                display: none;
+            }
+        </style>
     </head>
-    <body>
+    <body onload="display()">
         <div class="title-bar">
             <h1>Login | CollegeIns</h1>
             <button onclick="location.href='../index.html'">Home</button>
@@ -17,7 +21,8 @@
             <button onclick="location.href='analysis.html'">Analysis</button>
             <button onclick="location.href='summary.html'">Summary</button>
             <button onclick="location.href='resources.html'">Resources</button>
-            <button class="active" onclick="location.href='login.html'">Login</button>
+            <button class="active" onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
+            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
             <button onclick="location.href='about.html'">About</button>
         </div>
 
@@ -32,12 +37,12 @@
                                 <input type="text" name="lastname" placeholder="Last Name">
                             </div>
                             <div class="row">
-                                <input type="text" name="phone" placeholder="Phone">
+                                <input type="tel" name="phone" placeholder="Phone">
                                 <input type="text" name="zipcode" placeholder="Zipcode">
                             </div>
-                            <input type="text" name="email" placeholder="Email">
-                            <input type="text" name="password" placeholder="Password">
-                            <input type="text" name="passwordconfirm" placeholder="Confirm Password">
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="password" name="password" placeholder="Password">
+                            <input type="password" name="passwordconfirm" placeholder="Confirm Password">
                             <button type="submit">Submit</button>
                         </form>
                         <div class="login-item-4">
@@ -59,10 +64,10 @@
                     <section id="login" style="display:block;">
                         <h2>Login</h2>
                         <form id="login-form">
-                            <input type="text" name="email" placeholder="Email">
-                            <input type="text" name="password" placeholder="Password">
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="password" name="password" placeholder="Password">
 
-                            <button type="submit">Log in</button>
+                            <button type="submit" id="submit-login">Log in</button>
                         </form>
                         <div class="login-item-1">
                             <p>Don't have an account?</p>

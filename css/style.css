@@ -200,6 +200,17 @@ footer {
     padding: 10px;
 }
 
+.analysis-item-5{
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 /* Dashboard page formatting */
 
 .grid-container-dashboard {
@@ -454,10 +465,30 @@ footer {
     margin: 10px;
     padding: 10px;
 }
+.resources-item-5{
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
 /* Summary page formatting */
 
 .summary-item-1 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.summary-item-2 {
     grid-column: 1 / span 3;
     grid-row: 1;
     background-color: rgba(250, 247, 240, 0.92);
