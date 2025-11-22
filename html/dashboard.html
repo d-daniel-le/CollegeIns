@@ -7,8 +7,13 @@
         <meta name="robots" content="noindex, nofollow">
         <title>CollegeIns - Home</title>
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <style>
+            button[hidden]{
+                display: none;
+            }
+        </style>
     </head>
-    <body>
+    <body onload="display()">
         <div class="title-bar">
             <h1>Dashboard | CollegeIns</h1>
             <button onclick="location.href='../index.html'">Home</button>
@@ -16,7 +21,8 @@
             <button onclick="location.href='analysis.html'">Analysis</button>
             <button onclick="location.href='summary.html'">Summary</button>
             <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
+            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
             <button onclick="location.href='about.html'">About</button>
         </div>
 

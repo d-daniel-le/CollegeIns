@@ -7,8 +7,13 @@
         <meta name="robots" content="noindex, nofollow">
         <title>CollegeIns - Home</title>
         <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <style>
+            button[hidden]{
+                display: none;
+            }
+        </style>
     </head>
-    <body>
+    <body onload="display()">
         <div class="title-bar">
             <h1>Summary | CollegeIns</h1>
             <button onclick="location.href='../index.html'">Home</button>
@@ -16,13 +21,14 @@
             <button onclick="location.href='analysis.html'">Analysis</button>
             <button class="active" onclick="location.href='summary.html'">Summary</button>
             <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
+            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
             <button onclick="location.href='about.html'">About</button>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="summary-item-1">
+                <div class="summary-item-1" id="summary-1" hidden>
                     <h3>CollegeIns Summary</h3>
                     <p>
                         CollegeIns gives people straightforward look colleges analytics in their main academic areas and student support setups. It pulls together info from program details, transfer numbers, and services for students. This kind of summary lets prospective students grasp the big picture on a school's overall impact pretty fast. The site pushes for openness by pointing out what colleges handle well. It also flags spots that might need work. That even approach helps users pick a college that fits their own goals in school and life.
@@ -33,6 +39,10 @@
                         <br><br>
                         In the end, this summary lays out a fair take on how a college performs overall. Students can spot right away if it matches what they want. CollegeIns blends the good parts, the rough ones, and broader patterns into a single clear picture. It serves as an easy data source for more digging. That quick overview helps students feel sure about choosing a spot. They can count on it for the right backing, chances, and results ahead.
                     </p>
+                </div>
+
+                <div class="summary-item-2" id="summary-2" hidden>
+                    <p>Please signin or signup for an account to view the content of this page. </p>
                 </div>
             </div>
         </div>

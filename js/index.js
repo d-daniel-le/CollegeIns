@@ -1,3 +1,6 @@
+// Initialize count variable
+let count = 0;
+
 //// ---- SEARCH ---- ////
 
 // - Search on index.html - //
@@ -31,6 +34,91 @@ function search() {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += "The search that you are looking for is not found";
     }
+}
+
+//// ---- Display result ---- ////
+
+// - Display summary - //
+function display(){
+    const getSummary1 = document.getElementById("summary-1");
+    const getSummary2 = document.getElementById("summary-2");
+
+    const getAnalysis1 = document.getElementById("analysis-1");
+    const getAnalysis2 = document.getElementById("analysis-2");
+    const getAnalysis3 = document.getElementById("analysis-3");
+    const getAnalysis4 = document.getElementById("analysis-4");
+    const getAnalysis5 = document.getElementById("analysis-5");
+
+    const getResource1 = document.getElementById("resource-1");
+    const getResource2 = document.getElementById("resource-2");
+    const getResource3 = document.getElementById("resource-3");
+    const getResource4 = document.getElementById("resource-4");
+    const getResource5 = document.getElementById("resource-5");
+    
+
+    const getNavLogin = document.getElementById("nav-login");
+    const getNavLogout = document.getElementById("nav-logout")
+
+    const getLoginData = localStorage.getItem("loginData")
+    const getSignUpData = localStorage.getItem("signupData")
+    if (getLoginData !== null || getSignUpData !== null){
+        getNavLogin.hidden = true;
+        getNavLogout.hidden = false;
+        if(getSummary1 && getSummary2){
+            getSummary1.hidden = false;
+            getSummary2.hidden = true;
+        }
+        else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getAnalysis5){
+            getAnalysis5.hidden = true;
+            getAnalysis1.hidden = false;
+            getAnalysis2.hidden = false;
+            getAnalysis3.hidden = false;
+            getAnalysis4.hidden = false;
+        }
+        else if (getResource1 && getResource2 && getResource3 && getResource4 && getResource5){
+            getResource5.hidden = true;
+            getResource1.hidden = false;
+            getResource2.hidden = false;
+            getResource3.hidden = false;
+            getResource4.hidden = false;
+        }
+    }
+    else{
+        getNavLogin.hidden = false;
+        getNavLogout.hidden = true;
+        if(getSummary1 && getSummary2){
+            getSummary1.hidden = true;
+            getSummary2.hidden = false;
+
+        }
+        else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getAnalysis5) {
+            getAnalysis5.hidden = false;
+            getAnalysis1.hidden = true;
+            getAnalysis2.hidden = true;
+            getAnalysis3.hidden = true;
+            getAnalysis4.hidden = true;
+            
+        }
+        else if (getResource1 && getResource2 && getResource3 && getResource4 && getResource5){
+            getResource5.hidden = false;
+            getResource1.hidden = true;
+            getResource2.hidden = true;
+            getResource3.hidden = true;
+            getResource4.hidden = true;
+        }
+    }
+
+
+}
+
+
+//// ---- Logout ---- ////
+
+// - Logout - //
+
+function logout(){
+    localStorage.clear();
+    location.reload();
 }
 
 //// ---- MODALS ---- ////
@@ -95,6 +183,9 @@ if (signupForm) {
         document.getElementById("signup").style.display = "none";
 
         document.getElementById("results-page").style.display = "block";
+
+        document.getElementById("nav-login").hidden = true;
+        document.getElementById("nav-logout").hidden = false;
     });
 }
 
@@ -135,6 +226,9 @@ if (loginForm) {
         document.getElementById("login").style.display = "none";
 
         document.getElementById("results-page-login").style.display = "block";
+
+        document.getElementById("nav-login").hidden = true;
+        document.getElementById("nav-logout").hidden = false;
     });
 }
 
