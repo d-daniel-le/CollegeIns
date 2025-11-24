@@ -42,6 +42,9 @@ function search() {
 function display() {
     const getSummary1 = document.getElementById("summary-1");
     const getSummary2 = document.getElementById("summary-2");
+    const getSummary3 = document.getElementById("summary-3");
+    const getSummary4 = document.getElementById("summary-4");
+    const getSummary5 = document.getElementById("summary-5");
 
     const getAnalysis1 = document.getElementById("analysis-1");
     const getAnalysis2 = document.getElementById("analysis-2");
@@ -63,9 +66,12 @@ function display() {
     if (getLoginData !== null || getSignUpData !== null) {
         getNavLogin.hidden = true;
         getNavLogout.hidden = false;
-        if (getSummary1 && getSummary2) {
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getSummary5) {
+            getSummary5.hidden = true;
             getSummary1.hidden = false;
-            getSummary2.hidden = true;
+            getSummary2.hidden = false;
+            getSummary3.hidden = false;
+            getSummary4.hidden = false;
         } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getAnalysis5) {
             getAnalysis5.hidden = true;
             getAnalysis1.hidden = false;
@@ -84,9 +90,12 @@ function display() {
     } else {
         getNavLogin.hidden = false;
         getNavLogout.hidden = true;
-        if (getSummary1 && getSummary2) {
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getSummary5) {
+            getSummary5.hidden = false;
             getSummary1.hidden = true;
-            getSummary2.hidden = false;
+            getSummary2.hidden = true;
+            getSummary3.hidden = true;
+            getSummary4.hidden = true;
         } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getAnalysis5) {
             getAnalysis5.hidden = false;
             getAnalysis1.hidden = true;
