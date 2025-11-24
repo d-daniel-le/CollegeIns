@@ -159,6 +159,16 @@ if (signupForm) {
     signupForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        const inputs = signupForm.querySelectorAll("input");
+        for (const input of inputs) {
+            if (input.value.trim() === "") {
+                alert("Please fill out all fields.");
+                input.style.border = "2px solid red"; // highlight
+                return; // stop form submit
+            } else {
+                input.style.border = ""; // clear highlight
+            }
+        }
         const password = document.querySelector('input[name="password"]').value;
         const passwordConfirm = document.querySelector('input[name="passwordconfirm"]').value;
 
@@ -209,6 +219,17 @@ if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        const inputs = loginForm.querySelectorAll("input");  // <-- FIXED
+
+        for (const input of inputs) {
+            if (input.value.trim() === "") {
+                alert("Please fill out all fields.");
+                input.style.border = "2px solid red";
+                return;
+            } else {
+                input.style.border = "";
+            }
+        }
         const formData = new FormData(loginForm);
         const data = {};
 
@@ -247,6 +268,17 @@ if (slider && sliderValue) {
 if (updateForm) {
     updateForm.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        const requiredInputs = updateForm.querySelectorAll("input[ type='email'], input[type='date']");
+        for (const input of requiredInputs) {
+            if (input.value.trim() === "") {
+                alert("Please fill out required fields: Email and Start Date");
+                input.style.border = "2px solid red";
+                return;
+            } else {
+                input.style.border = "";
+            }
+        }
 
         const formData = new FormData(updateForm);
         const data = {};
