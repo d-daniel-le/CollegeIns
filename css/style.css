@@ -298,11 +298,13 @@ footer {
 }
 .summary-item-5 {
     grid-column: 1 / span 3;
-    grid-row: 2;
+    grid-row: 1;
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
     padding: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .summary-item-1,
@@ -340,6 +342,10 @@ footer {
 .resources-item-5 {
     grid-column: 1 / span 3;
     grid-row: 1;
+    background-color: rgba(250, 247, 240, 0.92);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 25px;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -347,8 +353,7 @@ footer {
 .resources-item-1,
 .resources-item-2,
 .resources-item-3,
-.resources-item-4,
-.resources-item-5 {
+.resources-item-4 {
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
