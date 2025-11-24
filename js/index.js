@@ -231,7 +231,7 @@ if (loginForm) {
     });
 }
 
-const updateForm = document.querySelector("form.form-grid");
+const updateForm = document.querySelector("form.dashboard-form");
 const resultsDashboard = document.getElementById("results-page-dashboard");
 const slider = document.getElementById("slider");
 const sliderValue = document.getElementById("slider-value");

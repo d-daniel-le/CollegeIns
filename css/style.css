@@ -251,12 +251,20 @@ footer {
     font-family: "Playfair Display Italic", serif;
 }
 
-.dashboard-item-7 input,
-.dashboard-item-7 label {
+.dashboard-form {
+    line-height: 1.5;
+    max-width: fit-content;
+    margin: 30px auto 5px;
+    border: 1px;
+    border-radius: 15px;
+    background-color: rgba(250, 247, 240, 0.92);
+    font-family: "Playfair Display Italic", serif;
+}
+.dashboard-form input,
+.dashboard-form select{
     color: #364845;
     border: 1px;
     border-radius: 5px;
-    /* font-family: "Playfair Display Italic", serif; */
     margin: 1px;
 }
 
@@ -289,13 +297,20 @@ footer {
     background-color: #2A444B;
 }
 
+#results-page-dashboard {
+    grid-column: 2;
+    grid-row: 3;
+    gap: 10px;
+}
+
 .dashboard-item-1,
 .dashboard-item-2,
 .dashboard-item-3,
 .dashboard-item-4,
 .dashboard-item-5,
 .dashboard-item-6,
-.dashboard-item-7 {
+.dashboard-item-7,
+#results-page-dashboard {
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
@@ -459,25 +474,30 @@ footer {
     grid-column: 3;
     grid-row: 2;
 }
+.resources-item-5 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
 .resources-item-1,
 .resources-item-2,
 .resources-item-3,
-.resources-item-4 {
+.resources-item-4,
+.resources-item-5 {
     background-color: rgba(250, 247, 240, 0.92);
     border-radius: 25px;
     margin: 10px;
     padding: 10px;
 }
-.resources-item-5{
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    background-color: rgba(250, 247, 240, 0.92);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+
+.resources-item-2 ul,
+.resources-item-3 ul,
+.resources-item-4 ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 /* Summary page formatting */
@@ -677,7 +697,7 @@ footer {
         width: 95%;
     }
     
-    .form-grid {
+    .dashboard-form {
         padding: 15px;
         margin: 20px auto;
         width: 95%;
