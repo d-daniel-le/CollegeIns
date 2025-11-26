@@ -16,26 +16,26 @@
 
     <body onload="display()">
         <div class="title-bar">
-            <h1>Summary | CollegeIns</h1>
-            <button onclick="location.href='../index.html'">Home</button>
-            <button onclick="location.href='dashboard.html'">Dashboard</button>
-            <button onclick="location.href='analysis.html'">Analysis</button>
-            <button class="active" onclick="location.href='summary.html'">Summary</button>
-            <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
-            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
-            <button onclick="location.href='about.html'">About</button>
+            <h1>Summary | <a href="../index.html"><img class="logo" src="../images/collegeins-logo.png" alt="CollegeIns logo"></a></h1>
+            <a href="../index.html"><button>Home</button></a>
+            <a href="./dashboard.html"><button>Dashboard</button></a>
+            <a href="./analysis.html"><button>Analysis</button></a>
+            <a href="./summary.html"><button class="active">Summary</button></a>
+            <a href="./resources.html"><button>Resources</button></a>
+            <a href="./login.html"><button>Login</button></a>
+            <a><button onclick="logout()" id="nav-logout" hidden>Logout</button></a>
+            <a href="./about.html"><button>About</button></a>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="summary-item-1" id="summary-1" hidden>
+                <div class="summary-item-1 bubble" id="summary-1" hidden>
                     <h3>CollegeIns Summary</h3>
                     <p>
                         CollegeIns has produced much clarity in providing the college vital performance metrics on the Dashboard. It makes it easy for students to see how colleges perform on academics, student support, and program success. The summary elaborates on what all its parameters mean, graduation rates, transfer success, program efficiency, and student support services. This helps students get a good picture of how each school fits their objectives.
                     </p>
                 </div>
-                <div class="summary-item-2" id="summary-2" hidden>
+                <div class="summary-item-2 bubble" id="summary-2" hidden>
                     <h3>Strengths</h3>
                     <p>
                         Many colleges listed on CollegeIns are proving to be very strong based on their dashboard data. For instance, Bellevue College maintains a strong transfer rate to major 4-year universities, such as the University of Washington (UW) and Washington State University (WSU). This high transfer success is also mirrored in the success of numerous highly sought academic pathways. From the Student Success Goal charts present on the Dashboard, programs like Academic Transfer DTA, Nursing AAS-T, and Business DTA demonstrate some of the highest graduation rates of all programs offered, thus signifying student satisfaction, stability within the curriculum, and clear pathways toward their goals.
@@ -44,7 +44,7 @@
                         In addition, a number of colleges have been expanding hybrid and online learning options, providing flexibility for working students and those with transportation challenges. They truly enable a greater number of students to access higher education. Support systems such as advising services, financial aid assistance, disability resource centers, and tutoring are other contributors to good student outcomes. Colleges excelling in those areas offer a greater degree of certainty for their students and steady progress towards completion or transfer.
                     </p>
                 </div>
-                <div class="summary-item-3" id="summary-3" hidden>
+                <div class="summary-item-3 bubble" id="summary-3" hidden>
                     <h3>Weaknesses</h3>
                     <p>
                         The higher ranked programs are, however, are in need of improvement, as we see in the Dashboard data. Some departments are graduating at lower rates than their peers, evidently pointing to inadequate resource allocation, faculty accessibility, or perhaps structures of academic support. The manner in which students seeking support for work study, strong disability accommodations, or public transportation definitely also runs into challenges at certain colleges that have limited or inconsistent services.
@@ -53,21 +53,29 @@
                         Another recurring challenge evident in the summary data is the weak digital outreach presence. Colleges with stagnant program web pages or poorly managed online resources might erect barriers for students trying to understand course information, faculty qualification, or program relevance. Weak digital outreach impacts less visibility, making it more difficult for students to assess the college's strengths in academics.
                     </p>
                 </div>
-                <div class="summary-item-4" id="summary-4" hidden>
+                <div class="summary-item-4 bubble" id="summary-4" hidden>
                     <h3>Overall Assessment</h3>
                     <p>
                         This summary offers an integrated appraisal of each college that balances performance with program specific data, student success, and support services. In such scenarios, students can quickly assess whether a college fits their own academic and personal needs. Strengths, responsibilities, and performance patterns have been consolidated into a coherent overview by CollegeIns. This enables students to weigh with confidence whether a college will serve their aspirations, provide the right resources, and yield successful academic outcomes
                     </p>
                 </div>
 
-                <div class="summary-item-5" id="summary-5" hidden>
+                <div class="summary-item-5 bubble" id="summary-5" hidden>
                     <p>Please signin or signup for an account to view the content of this page. </p>
                 </div>
             </div>
         </div>
 
         <footer>
-            <a href="./about.html" class="footer-links">About us</a>
+            <div class="footer-area">
+                <a href="../index.html" class="footer-link-1">Home</a>
+                <a href="./dashboard.html" class="footer-link-2">Dashboard</a>
+                <a href="./analysis.html" class="footer-link-3">Analysis (Login required)</a>
+                <a href="./summary.html" class="footer-link-4">Summary (Login required)</a>
+                <a href="./resources.html" class="footer-link-5">Resources (Login required)</a>
+                <a href="./login.html" class="footer-link-6">Login</a>
+                <a href="./about.html" class="footer-link-7">About us</a>
+            </div>
         </footer>
         
         <script src="../js/index.js"></script>
