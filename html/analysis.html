@@ -16,26 +16,26 @@
     
     <body onload="display()">
         <div class="title-bar">
-            <h1>Analysis | CollegeIns</h1>
-            <button onclick="location.href='../index.html'">Home</button>
-            <button onclick="location.href='dashboard.html'">Dashboard</button>
-            <button class="active" onclick="location.href='analysis.html'">Analysis</button>
-            <button onclick="location.href='summary.html'">Summary</button>
-            <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
-            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
-            <button onclick="location.href='about.html'">About</button>
+            <h1>Analysis | <a href="../index.html"><img class="logo" src="../images/collegeins-logo.png" alt="CollegeIns logo"></a></h1>
+            <a href="../index.html"><button>Home</button></a>
+            <a href="./dashboard.html"><button>Dashboard</button></a>
+            <a href="./analysis.html"><button class="active">Analysis</button></a>
+            <a href="./summary.html"><button>Summary</button></a>
+            <a href="./resources.html"><button>Resources</button></a>
+            <a href="./login.html"><button>Login</button></a>
+            <a><button onclick="logout()" id="nav-logout" hidden>Logout</button></a>
+            <a href="./about.html"><button>About</button></a>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="analysis-item-1" id="analysis-1" hidden>
+                <div class="analysis-item-1 bubble" id="analysis-1" hidden>
                     <h3>Overview</h3>
                     <p>
                         CollegeIns interprets the key performance metrics displayed on each college's Dashboard to help students understand how well a school supports academic success and career preparation. The overview pulls together data such as program outcomes, transfer performance, student completion rates, and available support services. By translating these dashboard values into clear insights, users can easily compare how colleges differ in academic strength, career pathways, accessibility services, and flexibility options like hybrid learning. This section gives prospective future students a realistic sense of whether a school fits their learning goals, personal needs, and long term academic plans.
                     </p>
                 </div>
-                <div class="analysis-item-2" id="analysis-2" hidden>
+                <div class="analysis-item-2 bubble" id="analysis-2" hidden>
                     <h3>Strengths and Weaknesses</h3>
                     <p>
                         CollegeIns emphasizes the areas where each college performs strongly based on the data provided. Strengths often include high performing academic programs, transparent program reporting, and reliable student support structures. Colleges that offer hybrid learning formats, maintain strong online engagement, and clearly present program details tend to score better in these categories.
@@ -44,7 +44,7 @@
                         However, the analysis also identifies weaknesses to maintain transparency. Some programs may show lower graduation or transfer rates, indicating possible gaps in resources or support. In certain cases, student services such as work study opportunities, advising availability, or disability support may be limited or inconsistent. Additionally, some departments may lack an updated online presence, making it harder for students to evaluate faculty or program quality. This balanced view helps students weigh what a college excels at against areas that may need improvement.
                     </p>
                 </div>
-                <div class="analysis-item-3" id="analysis-3" hidden>
+                <div class="analysis-item-3 bubble" id="analysis-3" hidden>
                     <h3>Data Visualization</h3>
                     <p>
                         CollegeIns displays visual representations of the college's key performance metrics using charts and graphs that can be viewed by clicking "Dashboard" tab. These visuals include program completion rates, transfer efficiency, enrollment trends, demographic breakdowns, and career outcome statistics. The charts help users quickly spot performance patterns, strengths, and areas that need attention without reading through long text or tables.
@@ -53,7 +53,7 @@
                         In the current prototype, these charts serve as placeholders showing what future real time, dynamically updated visualizations will look like. Eventually, the system will pull live data directly from colleges, giving students an even deeper understanding of how each institution performs across multiple categories.
                     </p>
                 </div>
-                <div class="analysis-item-4" id="analysis-4" hidden>
+                <div class="analysis-item-4 bubble" id="analysis-4" hidden>
                     <h3>Evaluation of Student Resources</h3>
                     <p>
                         CollegeIns also analyzes how effectively each college supports students outside the classroom. This includes reviewing financial aid services, disability accommodations, program specific support, academic advising, and career development opportunities. Other factors such as the availability of hybrid courses, the strength of transfer pathways, and the presence of work study options are also evaluated and explained.
@@ -62,14 +62,22 @@
                         By examining these resource categories, students gain a clear understanding of how well the college can support their academic progress, personal needs, and long term goals. The evaluation highlights both strong support systems and any gaps that may affect the student experience.
                     </p>
                 </div>
-                <div class="analysis-item-5" id="analysis-5" hidden>
+                <div class="analysis-item-5 bubble" id="analysis-5" hidden>
                     <p>Please signin or signup for an account to view the content of this page. </p>
                 </div>
             </div>
         </div>
         
         <footer>
-            <a href="./about.html" class="footer-links">About us</a>
+            <div class="footer-area">
+                <a href="../index.html" class="footer-link-1">Home</a>
+                <a href="./dashboard.html" class="footer-link-2">Dashboard</a>
+                <a href="./analysis.html" class="footer-link-3">Analysis (Login required)</a>
+                <a href="./summary.html" class="footer-link-4">Summary (Login required)</a>
+                <a href="./resources.html" class="footer-link-5">Resources (Login required)</a>
+                <a href="./login.html" class="footer-link-6">Login</a>
+                <a href="./about.html" class="footer-link-7">About us</a>
+            </div>
         </footer>
         
         <script src="../js/index.js"></script>

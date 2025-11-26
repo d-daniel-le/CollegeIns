@@ -16,48 +16,48 @@
     
     <body onload="display()">
         <div class="title-bar">
-            <h1>Dashboard | CollegeIns</h1>
-            <button onclick="location.href='../index.html'">Home</button>
-            <button class="active" onclick="location.href='dashboard.html'">Dashboard</button>
-            <button onclick="location.href='analysis.html'">Analysis</button>
-            <button onclick="location.href='summary.html'">Summary</button>
-            <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
-            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
-            <button onclick="location.href='about.html'">About</button>
+            <h1>Dashboard | <a href="../index.html"><img class="logo" src="../images/collegeins-logo.png" alt="CollegeIns logo"></a></h1>
+            <a href="../index.html"><button>Home</button></a>
+            <a href="./dashboard.html"><button class="active">Dashboard</button></a>
+            <a href="./analysis.html"><button>Analysis</button></a>
+            <a href="./summary.html"><button>Summary</button></a>
+            <a href="./resources.html"><button>Resources</button></a>
+            <a href="./login.html"><button>Login</button></a>
+            <a><button onclick="logout()" id="nav-logout" hidden>Logout</button></a>
+            <a href="./about.html"><button>About</button></a>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="dashboard-item-1">
+                <div class="dashboard-item-1 bubble">
                     <h3>Please click on the images to interact with the graphs</h3>
                 </div>
-                <div class="dashboard-item-2">
-                    <h2>Student headcounts, FTE, enrollements, and credits</h2>
-                    <img src="../images/dashboard/dashboardBarGraph.png" alt="A bar graph representing student headcounts, FTE, enrollments, and credits." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/BellevueCollegeEnrollment/SummaryofBCEnrollment?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
+                <div class="dashboard-item-2 bubble">
+                    <h3>Student headcounts, FTE, enrollements, and credits</h3>
+                    <img src="../images/dashboard/dashboard-bar-graph.png" alt="A bar graph representing student headcounts, FTE, enrollments, and credits." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/BellevueCollegeEnrollment/SummaryofBCEnrollment?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
                     <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/BellevueCollegeEnrollment/SummaryofBCEnrollment?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
                 </div>
-                <div class="dashboard-item-3">
-                    <h2>Number of graduates by credidential</h2>
-                    <img src="../images/dashboard/dashboardLineChart1.png" alt="A line chart representing the number of graduates by credidential." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ProgramGraduates/Graduates?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
+                <div class="dashboard-item-3 bubble">
+                    <h3>Number of graduates by credidential</h3><br>
+                    <img src="../images/dashboard/dashboard-line-chart-1.png" alt="A line chart representing the number of graduates by credidential." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ProgramGraduates/Graduates?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
                     <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/ProgramGraduates/Graduates?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
                 </div>
-                <div class="dashboard-item-4">
-                    <h2>Bellevue College performance toward student success goals</h2>
-                    <img src="../images/dashboard/dashboardLineChart2.png" alt="A line chart representing Bellevue College performance toward student success goals." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
+                <div class="dashboard-item-4 bubble">
+                    <h3>Bellevue College performance toward student success goals</h3>
+                    <img src="../images/dashboard/dashboard-line-chart-2.png" alt="A line chart representing Bellevue College performance toward student success goals." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
                     <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
                 </div>
-                <div class="dashboard-item-5">
-                    <h2>Headcount 2024-2025</h2>
-                    <h1>21,115 students</h1>
+                <div class="dashboard-item-5 bubble">
+                    <h3>Headcount 2024-2025</h3>
+                    <h2>21,115 students</h2>
                 </div>
-                <div class="dashboard-item-6">
-                    <h2>Annual cost of attendance</h2>
-                    <h1>$27,959</h1>
+                <div class="dashboard-item-6 bubble">
+                    <h3>Annual cost of attendance</h3>
+                    <h2>$27,959</h2>
                 </div>
 
-                <div class="dashboard-item-7">
-                    <form class="dashboard-form">
+                <div class="dashboard-item-7 bubble">
+                    <form class="dashboard-form bubble">
                         <label for="email">Provide your email address for updates on new data:</label>
                         <input type="email" id="email" name="email"><br>
 
@@ -106,7 +106,7 @@
                     </form>
                 </div>
                 <div id="results-page-dashboard" style="display:none;">
-                    <div class="login-item-3">
+                    <div class="login-item-3 bubble">
                         <div id="results-page"></div>
                         <p>Thank you for signing up! We will send you a confirmation email</p>
                     </div>
@@ -122,7 +122,15 @@
         </div>
 
         <footer>
-            <a href="./about.html" class="footer-links">About us</a>
+            <div class="footer-area">
+                <a href="../index.html" class="footer-link-1">Home</a>
+                <a href="./dashboard.html" class="footer-link-2">Dashboard</a>
+                <a href="./analysis.html" class="footer-link-3">Analysis (Login required)</a>
+                <a href="./summary.html" class="footer-link-4">Summary (Login required)</a>
+                <a href="./resources.html" class="footer-link-5">Resources (Login required)</a>
+                <a href="./login.html" class="footer-link-6">Login</a>
+                <a href="./about.html" class="footer-link-7">About us</a>
+            </div>
         </footer>
 
         <script src="../js/index.js"></script>

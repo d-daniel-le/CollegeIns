@@ -16,46 +16,20 @@
 
     <body onload="display()">
         <div class="title-bar">
-            <h1>About | CollegeIns</h1>
-            <button onclick="location.href='../index.html'">Home</button>
-            <button onclick="location.href='dashboard.html'">Dashboard</button>
-            <button onclick="location.href='analysis.html'">Analysis</button>
-            <button onclick="location.href='summary.html'">Summary</button>
-            <button onclick="location.href='resources.html'">Resources</button>
-            <button onclick="location.href='login.html'" id="nav-login" hidden>Login</button>
-            <button onclick="logout()" id="nav-logout" hidden>Logout</button>
-            <button class="active" onclick="location.href='about.html'">About</button>
+            <h1>About | <a href="../index.html"><img class="logo" src="../images/collegeins-logo.png" alt="CollegeIns logo"></a></h1>
+            <a href="../index.html"><button>Home</button></a>
+            <a href="./dashboard.html"><button>Dashboard</button></a>
+            <a href="./analysis.html"><button>Analysis</button></a>
+            <a href="./summary.html"><button>Summary</button></a>
+            <a href="./resources.html"><button>Resources</button></a>
+            <a href="./login.html"><button>Login</button></a>
+            <a><button onclick="logout()" id="nav-logout" hidden>Logout</button></a>
+            <a href="./about.html"><button class="active">About</button></a>
         </div>
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="about-item-1">
-                    <h3>What is CollegeIns?</h3>
-                    <p>
-                        CollegeIns is an educational tool to help prospective future/ present college students explore certain
-                        programs, transfer opportunities, success rates, and overall school resources in one place.
-                        Searching for colleges can be overwhelming and time consuming at times. This is where
-                        CollegeIns provides clear resources and accessible data that helps any student make informed 
-                        and confident educational decisions.
-                    </p>
-                </div>
-                <div class="about-item-2">
-                    <h3>Who Uses CollegeIns?</h3>
-                    <h4>College Administrators</h4>
-                    <p>
-                        Colleges can showcase their strengths, programs, and analytics with confidence and transparency.
-                        With CRM integration (HubSpot, Salesforce, etc..), schools can present overall accurate,
-                        and up to date information to build trust bonds with future aspiring students.
-                    </p>
-                    
-                    <h4>Prospective Students</h4>
-                    <p>
-                        Students can read reviews, compare schools, view important analytics, monitor several colleges,
-                        and access available support services; all in one platform, and on any device!
-                    </p>
-                </div>
-
-                <div class="about-item-3">
+                <div class="about-item-1 bubble">
                     <h3>Accessibility</h3>
                     <p>
                         CollegeIns is designed to uphold accessibility to the highest standard for all students. All content
@@ -63,22 +37,21 @@
                         supports overall keyboard navigation, and meets color contrast guidelines as well as ADA compliance.
                         Typography always stays readable with 12px body text and 16px headings, aswell with fonts like
                         Roboto, or Lato.
-
                     </p>
                 </div>
-                <div class="about-item-4">
+                <div class="about-item-2 bubble">
                     <h3>Style Guide</h3>
                     <p>
                         <strong>Font Sizes:</strong> 16px paragraphs, 48px headings<br>
                         <strong>Fonts:</strong> Cormorant Garamond, Playfair Display Italic, Noto Serif JP<br>
                         <strong>Primary Color:</strong> #B8CFCF (Light blue)<br>
-                        <strong>Secondary Colors:</strong> #303B3B (Dark greenish-blue gray), #075959 (Jade green), #728C8A (Blueish gray), #39606A (Dark grayish blue), #4A7884 (Greyish light blue), #D1D6CF (Light grey)<br>
+                        <strong>Secondary Colors:</strong> #303B3B <img src="../images/about/303B3B.png" width="10px" alt="The color #303B3B">, #075959 <img src="../images/about/075959.png" width="10px" alt="The color #075959">, #728C8A <img src="../images/about/728CBA.png" width="10px" alt="The color #728C8A">, #39606A <img src="../images/about/39606A.png" width="10px" alt="The color #39606A">, #4A7884 <img src="../images/about/4A7884.png" width="10px" alt="The color #417884">, #D1D6CF <img src="../images/about/D1D6CF.png" width="10px" alt="The color #D1D6CF"><br>
                         <strong>Layout:</strong> Grid / Flex<br>
                         <strong>Links:</strong> No decorations, custom hover colors
                     </p>
                 </div>
 
-                <div class="about-item-5">
+                <div class="about-item-3 bubble">
                     <h3>Project Scope</h3>
                     <p>
                         This prototype includes the home page, dashboard, user account features, summary reports,
@@ -86,20 +59,19 @@
                         completed in future updates.
                     </p>
                 </div>
-
-                <div class="about-item-6">
-                    <h3>Our Mission</h3>
-                    <p>
-                        CollegeIns aims to make college exploration transparent, accessible, and overall stress free. Our goal
-                        is to inspire students with clear data integration and insights, helping them choose the best educational
-                        path for their future.
-                    </p>
-                </div>
             </div>
         </div>
 
         <footer>
-            <a href="./about.html" class="footer-links">About us</a>
+            <div class="footer-area">
+                <a href="../index.html" class="footer-link-1">Home</a>
+                <a href="./dashboard.html" class="footer-link-2">Dashboard</a>
+                <a href="./analysis.html" class="footer-link-3">Analysis (Login required)</a>
+                <a href="./summary.html" class="footer-link-4">Summary (Login required)</a>
+                <a href="./resources.html" class="footer-link-5">Resources (Login required)</a>
+                <a href="./login.html" class="footer-link-6">Login</a>
+                <a href="./about.html" class="footer-link-7">About us</a>
+            </div>
         </footer>
 
         <script src="../js/index.js"></script>
