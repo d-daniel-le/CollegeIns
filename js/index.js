@@ -58,6 +58,8 @@ function display() {
     const getResource4 = document.getElementById("resource-4");
     const getResource5 = document.getElementById("resource-5");
 
+    const getImagePanel = document.getElementById("image-panel");
+
     const getNavLogin = document.getElementById("nav-login");
     const getNavLogout = document.getElementById("nav-logout");
 
@@ -66,48 +68,54 @@ function display() {
     if (getLoginData !== null || getSignUpData !== null) {
         getNavLogin.hidden = true;
         getNavLogout.hidden = false;
-        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getSummary5) {
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
             getSummary5.hidden = true;
             getSummary1.hidden = false;
             getSummary2.hidden = false;
             getSummary3.hidden = false;
             getSummary4.hidden = false;
-        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getAnalysis5) {
+            getImagePanel.hidden = false;
+        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
             getAnalysis5.hidden = true;
             getAnalysis1.hidden = false;
             getAnalysis2.hidden = false;
             getAnalysis3.hidden = false;
             getAnalysis4.hidden = false;
-        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getResource5) {
+            getImagePanel.hidden = false;
+        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
             getResource5.hidden = true;
             getResource1.hidden = false;
             getResource2.hidden = false;
             getResource3.hidden = false;
             getResource4.hidden = false;
+            getImagePanel.hidden = false;
         } else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
         }
     } else {
         getNavLogin.hidden = false;
         getNavLogout.hidden = true;
-        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getSummary5) {
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
             getSummary5.hidden = false;
             getSummary1.hidden = true;
             getSummary2.hidden = true;
             getSummary3.hidden = true;
             getSummary4.hidden = true;
-        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getAnalysis5) {
+            getImagePanel.hidden = true;
+        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
             getAnalysis5.hidden = false;
             getAnalysis1.hidden = true;
             getAnalysis2.hidden = true;
             getAnalysis3.hidden = true;
             getAnalysis4.hidden = true;
-        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getResource5) {
+            getImagePanel.hidden = true;
+        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
             getResource5.hidden = false;
             getResource1.hidden = true;
             getResource2.hidden = true;
             getResource3.hidden = true;
             getResource4.hidden = true;
+            getImagePanel.hidden = true;
         } else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
         }
