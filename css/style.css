@@ -278,7 +278,6 @@ footer {
 /* Dashboard page formatting */
 
 .grid-container-dashboard {
-    background-color: #2E617C;
     display: grid;
     grid-template-columns: 1fr minmax(0, 1600px) 1fr;
     grid-template-rows: auto;
@@ -331,7 +330,6 @@ footer {
 }
 .dashboard-form input,
 .dashboard-form select{
-    color: #364845;
     border: 1px;
     border-radius: 5px;
     margin: 1px;
@@ -339,10 +337,6 @@ footer {
 
 .dashboard-images {
     width: 100%;
-}
-
-.submit {
-    color: #39606A;
 }
 
 .file-upload input[type="file"] {
@@ -360,10 +354,6 @@ footer {
     padding-right: 20px;
     margin-top: 10%;
     margin-bottom: 10%;
-}
-
-.file-upload:hover {
-    background-color: #2A444B;
 }
 
 #results-page-dashboard {
