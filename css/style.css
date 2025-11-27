@@ -64,14 +64,6 @@ button.active {
     background-color: #B7CACE;
 }
 
-.title-bar {
-    background-color: #eeeeea;
-    color: #faf7f0;
-    text-align: center;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    margin-top: 0px;
-}
 .logo {
     vertical-align: text-bottom;
     height: 54px;
@@ -96,7 +88,6 @@ button.active {
 
 .bubble {
     background-color: #D9EDED;
-    /* D9EDED; */
     border-radius: 25px;
     margin: 10px;
     padding: 10px;
@@ -122,20 +113,7 @@ button.active {
 
 /* Header */
 
-/* .title-grid {
-    grid-column: 2;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    z-index: 1;
-    grid-template-rows: 1fr auto;
-    background-color: white;
-} */
 .title-bar {
-    /* display: grid;
-    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
-    grid-template-rows: auto; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
