@@ -446,7 +446,7 @@ if (loginForm) {
             localStorage.setItem("loginData", JSON.stringify(data));
 
             document.getElementById("login").style.display = "none";
-            document.getElementById("results-page-login bubble").style.display = "block";
+            document.getElementById("results-page-login-bubble").style.display = "block";
 
             document.getElementById("nav-login").hidden = true;
             document.getElementById("nav-logout").hidden = false;

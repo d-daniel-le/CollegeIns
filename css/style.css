@@ -1,3 +1,4 @@
+
 /* All pages formatting */
 
 html {
@@ -92,6 +93,11 @@ button.active {
     padding: 10px;
 }
 
+.login-image {
+    width: 50px;
+    
+}
+
 .content-area-banner {
     grid-column: 2;
     grid-row: 2;
@@ -139,6 +145,12 @@ button.active {
 .title-item-2 {
     grid-row: 1;
 }
+
+.title-login, .login-image {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
 .title-login {
     margin-top: 75px;
 }
