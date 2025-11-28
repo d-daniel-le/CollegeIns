@@ -454,7 +454,7 @@ if (loginForm) {
     });
 }
 
-//// ---- UPDATE FORM ---- ////
+//// ---- UPDATE FORM VALIDATION ---- ////
 const updateForm = document.querySelector("form.dashboard-form");
 const resultsDashboard = document.getElementById("results-page-dashboard");
 const slider = document.getElementById("slider");
@@ -468,18 +468,91 @@ if (slider && sliderValue) {
     });
 }
 
+function validateEmail(email) {
+    if (!email.includes('@')) return false;
+    if (!email.includes('.')) return false;
+    if (email.indexOf('@') === 0) return false;
+    if (email.endsWith('.')) return false;
+    
+    return true;
+}
+
+function validateUpdateDate(dateString) {
+    if (!dateString) return false;
+    
+    const selectedDate = new Date(dateString);
+    const today = new Date();
+    const selectedDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate());
+    const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    
+    return selectedDay >= todayDay;
+}
+
+function showFieldError(fieldId, message) {
+    hideFieldError(fieldId);
+    
+    const field = document.getElementById(fieldId);
+    if (field) {
+        const errorElement = document.createElement('div');
+        errorElement.className = 'field-error-message';
+        errorElement.id = fieldId + '-error';
+        errorElement.style.color = 'red';
+        errorElement.style.fontSize = '0.8em';
+        errorElement.style.marginTop = '5px';
+        errorElement.textContent = message;
+        
+        field.after(errorElement);
+        field.style.border = "2px solid red";
+    }
+}
+
+function hideFieldError(fieldId) {
+    const errorElement = document.getElementById(fieldId + '-error');
+    const field = document.getElementById(fieldId);
+    
+    if (errorElement) {
+        errorElement.remove();
+    }
+    if (field) {
+        field.style.border = "";
+    }
+}
+
 if (updateForm) {
     updateForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const requiredInputs = updateForm.querySelectorAll("input[ type='email'], input[type='date']");
-        for (const input of requiredInputs) {
-            if (input.value.trim() === "") {
-                input.style.border = "2px solid red";
-                return;
-            } else {
-                input.style.border = "";
+        let isValid = true;
+
+        hideFieldError('email');
+        hideFieldError('update-date');
+
+        const emailInput = document.getElementById('email');
+        if (emailInput) {
+            const emailValue = emailInput.value.trim();
+            if (emailValue === "") {
+                showFieldError('email', 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(emailValue)) {
+                showFieldError('email', 'Please enter a valid email address (e.g., user@example.com)');
+                isValid = false;
             }
+        }
+
+        const dateInput = document.getElementById('update-date');
+        if (dateInput) {
+            const dateValue = dateInput.value;
+            if (dateValue === "") {
+                showFieldError('update-date', 'Start date is required');
+                isValid = false;
+            } else if (!validateUpdateDate(dateValue)) {
+                showFieldError('update-date', 'Please select a date in the future');
+                isValid = false;
+            }
+        }
+
+        if (!isValid) {
+            return;
         }
 
         const formData = new FormData(updateForm);
@@ -490,32 +563,37 @@ if (updateForm) {
 
             const dataTypesDiv = document.getElementById("data-types");
             const checkedBoxes = dataTypesDiv.querySelectorAll('input[type="checkbox"]:checked');
-            const selectedDataTypes = Array.from(checkedBoxes).map((checkbox) => checkbox.value);
-
-            if (selectedDataTypes.length > 0) {
-                resultsDashboard.append(`datatype: ${selectedDataTypes.join(" ")}`);
-                resultsDashboard.appendChild(document.createElement("br"));
-                data["datatype"] = selectedDataTypes.join(" ");
+            const selectedDataTypes = [];
+            for (var i = 0; i < checkedBoxes.length; i++) {
+                selectedDataTypes.push(checkedBoxes[i].value);
             }
 
-            formData.forEach((value, name) => {
-                if (!["graphs", "headcount", "coa"].includes(name)) {
+            if (selectedDataTypes.length > 0) {
+                resultsDashboard.append('datatype: ' + selectedDataTypes.join(' '));
+                resultsDashboard.appendChild(document.createElement('br'));
+                data['datatype'] = selectedDataTypes.join(' ');
+            }
+
+            formData.forEach(function(value, name) {
+                if (name !== 'graphs' && name !== 'headcount' && name !== 'coa') {
                     data[name] = value;
-                    resultsDashboard.append(`${name}: ${value}`);
-                    resultsDashboard.appendChild(document.createElement("br"));
+                    resultsDashboard.append(name + ': ' + value);
+                    resultsDashboard.appendChild(document.createElement('br'));
                 }
             });
 
-            localStorage.setItem("updatePreferences", JSON.stringify(data));
-            updateForm.style.display = "none";
-            document.getElementById("results-page-dashboard").style.display = "block";
+            localStorage.setItem('updatePreferences', JSON.stringify(data));
+            updateForm.style.display = 'none';
+            document.getElementById('results-page-dashboard').style.display = 'block';
         }
     });
 }
-const output = document.getElementById("slider-value");
 
-output.textContent = slider.value;
-
-slider.addEventListener("input", () => {
+const output = document.getElementById('slider-value');
+if (output && slider) {
     output.textContent = slider.value;
-});
+
+    slider.addEventListener('input', function() {
+        output.textContent = slider.value;
+    });
+}
