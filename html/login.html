@@ -25,11 +25,12 @@
                     <button class="title-button" onclick="location.href='./summary.html'">Summary</button>
                     <button class="title-button" onclick="location.href='./resources.html'">Resources</button>
                     <button class="title-button" onclick="location.href='./about.html'">About</button>
-                </div>
-                <div class="title-item-2">
+                    <div class="title-item-2">
                     <button class="active title-login" onclick="location.href='./login.html'" id="nav-login" hidden>Login</button>
                     <button class="title-login" onclick="logout()" id="nav-logout" hidden>Logout</button>
                 </div>
+                </div>
+                
             </div>
         </div>
 
@@ -40,21 +41,50 @@
                         <h2>Sign Up</h2>
                         <form id="signup-form">
                             <div class="row">
-                                <input type="text" name="firstname" placeholder="First Name">
-                                <input type="text" name="lastname" placeholder="Last Name">
+                                <div class="field-group">
+                                    <label class="required-field">First Name</label>
+                                    <input type="text" name="firstname" placeholder="First Name">
+                                    <div class="error-message" id="firstname-error"></div>
+                                </div>
+                                <div class="field-group">
+                                    <label class="required-field">Last Name</label>
+                                    <input type="text" name="lastname" placeholder="Last Name">
+                                    <div class="error-message" id="lastname-error"></div>
+                                </div>
                             </div>
                             <div class="row">
-                                <input type="tel" name="phone" placeholder="Phone">
-                                <input type="text" name="zipcode" placeholder="Zipcode">
+                                <div class="field-group">
+                                    <label class="required-field">Phone</label>
+                                    <input type="tel" name="phone" placeholder="(123) - 456 - 7890">
+                                    <div class="error-message" id="phone-error"></div>
+                                </div>
+                                <div class="field-group">
+                                    <label class="required-field">Zipcode</label>
+                                    <input type="text" name="zipcode" placeholder="12345" maxlength="5">
+                                    <div class="error-message" id="zipcode-error"></div>
+                                </div>
                             </div>
-                            <input type="email" name="email" placeholder="Email">
-                            <input type="password" name="password" placeholder="Password">
-                            <input type="password" name="passwordconfirm" placeholder="Confirm Password">
-                            <button type="submit">Submit</button>
+                            <div class="field-group">
+                                <label class="required-field">Email</label>
+                                <input type="email" name="email" placeholder="Email">
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                            <div class="field-group">
+                                <label class="required-field">Password</label>
+                                <input type="password" name="password" placeholder="Password">
+                                <div class="error-message" id="password-error"></div>
+                            </div>
+                            <div class="field-group">
+                                <label class="required-field">Confirm Password</label>
+                                <input type="password" name="passwordconfirm" placeholder="Confirm Password">
+                                <div class="error-message" id="passwordconfirm-error"></div>
+                            </div>
+                            <button type="submit" id="submit-signup">Submit</button>
                         </form>
                         <div class="login-item-4">
-                            <p>Already have an account?</p>
+                            <p>Already have an account?
                             <button id="login-btn" class="clear-button-login" onclick="showSection('login')">Log in</button>
+                            </p>
                         </div>
                     </section>
 
@@ -71,14 +101,22 @@
                     <section id="login" style="display:block;">
                         <h2>Login</h2>
                         <form id="login-form">
-                            <input type="email" name="email" placeholder="Email">
-                            <input type="password" name="password" placeholder="Password">
-
+                            <div class="field-group">
+                                <label class="required-field">Email</label>
+                                <input type="email" name="login-email" placeholder="Email">
+                                <div class="error-message" id="login-email-error"></div>
+                            </div>
+                            <div class="field-group">
+                                <label class="required-field">Password</label>
+                                <input type="password" name="login-password" placeholder="Password">
+                                <div class="error-message" id="login-password-error"></div>
+                            </div>
                             <button type="submit" id="submit-login">Log in</button>
                         </form>
                         <div class="login-item-1">
-                            <p>Don't have an account?</p>
+                            <p>Don't have an account?
                             <button id="signup-btn" class="clear-button-signup" onclick="showSection('signup')">Sign up</button>
+                            </p>
                         </div>
                     </section>
                 </div>

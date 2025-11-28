@@ -166,49 +166,233 @@ function showSection(sectionName) {
     signupSection.style.display = "none";
 
     document.getElementById(sectionName).style.display = "block";
+    
+    clearAllErrors();
 }
 
-const signupButton = document.getElementById("signup-btn");
+function clearAllErrors() {
+    var errorMessages = document.querySelectorAll('.error-message');
+    for (var i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].style.display = 'none';
+    }
+    
+    var inputs = document.querySelectorAll('input');
+    for (var j = 0; j < inputs.length; j++) {
+        inputs[j].classList.remove('field-error');
+    }
+}
+
+function showError(fieldId, message) {
+    const errorElement = document.getElementById(fieldId + '-error');
+    const inputElement = document.querySelector(`[name="${fieldId}"]`);
+    
+    if (errorElement && inputElement) {
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+        inputElement.classList.add('field-error');
+        inputElement.classList.remove('field-valid');
+    }
+}
+
+function hideError(fieldId) {
+    var errorElement = document.getElementById(fieldId + '-error');
+    var inputElement = document.querySelector('[name="' + fieldId + '"]');
+    
+    if (errorElement && inputElement) {
+        errorElement.style.display = 'none';
+        inputElement.classList.remove('field-error');
+    }
+}
+
+function validatePhone(phone) {
+    let digitCount = 0;
+    for (let i = 0; i < phone.length; i++) {
+        const char = phone[i];
+        if (char >= '0' && char <= '9') {
+            digitCount++;
+        }
+    }
+    return digitCount === 10;
+}
+
+function formatPhone(input) {
+    let numbersOnly = '';
+    for (let i = 0; i < input.value.length; i++) {
+        const char = input.value[i];
+        if (char >= '0' && char <= '9') {
+            numbersOnly += char;
+        }
+    }
+    
+    if (numbersOnly.length <= 3) {
+        input.value = numbersOnly;
+    } else if (numbersOnly.length <= 6) {
+        input.value = '(' + numbersOnly.substring(0, 3) + ') - ' + numbersOnly.substring(3);
+    } else if (numbersOnly.length <= 10) {
+        input.value = '(' + numbersOnly.substring(0, 3) + ') - ' + numbersOnly.substring(3, 6) + ' - ' + numbersOnly.substring(6);
+    } else {
+        input.value = '(' + numbersOnly.substring(0, 3) + ') - ' + numbersOnly.substring(3, 6) + ' - ' + numbersOnly.substring(6, 10);
+    }
+}
+
+function validateZipcode(zipcode) {
+    if (zipcode.length !== 5) return false;
+    
+    for (let i = 0; i < zipcode.length; i++) {
+        const char = zipcode[i];
+        if (char < '0' || char > '9') {
+            return false;
+        }
+    }
+    return true;
+}
+
+function validateEmail(email) {
+    if (!email.includes('@')) return false;
+    if (!email.includes('.')) return false;
+    if (email.indexOf('@') === 0) return false;
+    if (email.endsWith('.')) return false;
+    
+    return true;
+}
+
+
+function validatePassword(password) {
+    return password.length >= 1; 
+}
+
 const signupForm = document.getElementById("signup-form");
-const resultsList = document.getElementById("results");
+if (signupForm) {
+    const phoneInput = signupForm.querySelector('input[name="phone"]');
+    if (phoneInput) {
+    phoneInput.addEventListener('input', function() {
+        formatPhone(this);
+    });
+    }
+    
+    const zipcodeInput = signupForm.querySelector('input[name="zipcode"]');
+    if (zipcodeInput) {
+    zipcodeInput.addEventListener('input', function() {
+        var numbersOnly = '';
+        for (var i = 0; i < this.value.length; i++) {
+            var char = this.value[i];
+            if (char >= '0' && char <= '9') {
+                numbersOnly += char;
+            }
+        }
+        this.value = numbersOnly.substring(0, 5);
+    });
+    }
+}
+
+function validateSignupField(fieldName, value) {
+    switch(fieldName) {
+        case 'firstname':
+        case 'lastname':
+            if (!value.trim()) {
+                showError(fieldName, 'This field is required');
+            } else {
+                hideError(fieldName);
+            }
+            break;
+        case 'phone':
+            if (!value.trim()) {
+                showError(fieldName, 'Phone number is required');
+            } else if (!validatePhone(value)) {
+                showError(fieldName, 'Please use format: (123) - 456 - 7890');
+            } else {
+                hideError(fieldName);
+            }
+            break;
+        case 'zipcode':
+            if (!value.trim()) {
+                showError(fieldName, 'Zipcode is required');
+            } else if (!validateZipcode(value)) {
+                showError(fieldName, 'Please enter a valid 5-digit zipcode');
+            } else {
+                hideError(fieldName);
+            }
+            break;
+        case 'email':
+            if (!value.trim()) {
+                showError(fieldName, 'Email is required');
+            } else if (!validateEmail(value)) {
+                showError(fieldName, 'Please enter a valid email address');
+            } else {
+                hideError(fieldName);
+            }
+            break;
+        case 'password':
+    if (!value.trim()) {
+        showError(fieldName, 'Password is required');
+    } else {
+        hideError(fieldName);
+    }
+    break;
+    }
+}
 
 if (signupForm) {
     signupForm.addEventListener("submit", function (e) {
         e.preventDefault();
-
-        const inputs = signupForm.querySelectorAll("input");
-        for (const input of inputs) {
-            if (input.value.trim() === "") {
-                alert("Please fill out all fields.");
-                input.style.border = "2px solid red"; // highlight
-                return; // stop form submit
-            } else {
-                input.style.border = ""; // clear highlight
-            }
+        
+        const formData = new FormData(signupForm);
+        let isValid = true;
+        
+        clearAllErrors();
+        
+        const fields = [
+            { name: 'firstname', message: 'First name is required' },
+            { name: 'lastname', message: 'Last name is required' },
+            { name: 'phone', message: 'Phone number is required' },
+            { name: 'zipcode', message: 'Zipcode is required' },
+            { name: 'email', message: 'Email is required' },
+            { name: 'password', message: 'Password is required' }
+        ];
+        
+    for (var i = 0; i < fields.length; i++) {
+    var field = fields[i];
+    var value = formData.get(field.name);
+    if (!value.trim()) {
+        showError(field.name, field.message);
+        isValid = false;
+    } else {
+        validateSignupField(field.name, value);
+        var errorElement = document.getElementById(field.name + '-error');
+        if (errorElement && errorElement.style.display === 'block') {
+            isValid = false;
         }
-        const password = document.querySelector('input[name="password"]').value;
-        const passwordConfirm = document.querySelector('input[name="passwordconfirm"]').value;
+    }
+}
 
-        if (password !== passwordConfirm) {
-            alert("Passwords do not match!");
+        const password = formData.get('password');
+        const passwordConfirm = formData.get('passwordconfirm');
+        if (!passwordConfirm.trim()) {
+            showError('passwordconfirm', 'Please confirm your password');
+            isValid = false;
+        } else if (password !== passwordConfirm) {
+            showError('passwordconfirm', 'Passwords do not match');
+            isValid = false;
+        }
+        
+        if (!isValid) {
             return;
         }
-
-        const formData = new FormData(signupForm);
+        
         const data = {};
+        const resultsList = document.getElementById("results");
 
         resultsList.innerHTML = "";
 
-        formData.forEach((value, name) => {
-            data[name] = value;
-            resultsList.append(`${name}: ${value}`);
-            resultsList.append(document.createElement("br"));
+        formData.forEach(function(value, name) {
+        data[name] = value;
+        resultsList.append(name + ': ' + value);
+        resultsList.append(document.createElement("br"));
         });
 
         localStorage.setItem("signupData", JSON.stringify(data));
 
         document.getElementById("signup").style.display = "none";
-
         document.getElementById("results-page").style.display = "block";
 
         document.getElementById("nav-login").hidden = true;
@@ -218,57 +402,59 @@ if (signupForm) {
 
 //// ---- LOGIN ---- ////
 
-function showSection(sectionName) {
-    const loginSection = document.getElementById("login");
-    const signupSection = document.getElementById("signup");
-
-    loginSection.style.display = "none";
-    signupSection.style.display = "none";
-
-    document.getElementById(sectionName).style.display = "block";
-}
-
-const loginButton = document.getElementById("login-btn");
 const loginForm = document.getElementById("login-form");
-const resultsListLogin = document.getElementById("results-login");
-
 if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const inputs = loginForm.querySelectorAll("input");  // <-- FIXED
-
-        for (const input of inputs) {
-            if (input.value.trim() === "") {
-                alert("Please fill out all fields.");
-                input.style.border = "2px solid red";
-                return;
-            } else {
-                input.style.border = "";
-            }
-        }
         const formData = new FormData(loginForm);
+        let isValid = true;
+        
+        clearAllErrors();
+        
+        const email = formData.get('login-email');
+        if (!email || !email.trim()) {
+            showError('login-email', 'Email is required');
+            isValid = false;
+        } else if (!validateEmail(email)) {
+            showError('login-email', 'Please enter a valid email address');
+            isValid = false;
+        }
+        
+        const password = formData.get('login-password');
+        if (!password || !password.trim()) {
+            showError('login-password', 'Password is required');
+            isValid = false;
+        }
+        
+        if (!isValid) {
+            return;
+        }
+
         const data = {};
+        const resultsListLogin = document.getElementById("results-login");
 
-        resultsList.innerHTML = "";
+        if (resultsListLogin) {
+            resultsListLogin.innerHTML = "";
 
-        formData.forEach((value, name) => {
-            data[name] = value;
-            resultsList.append(`${name}: ${value}`);
-            resultsList.append(document.createElement("br"));
-        });
+            formData.forEach(function(value, name) {
+                data[name] = value;
+                resultsListLogin.append(name + ': ' + value);
+                resultsListLogin.append(document.createElement("br"));
+            });
 
-        localStorage.setItem("loginData", JSON.stringify(data));
+            localStorage.setItem("loginData", JSON.stringify(data));
 
-        document.getElementById("login").style.display = "none";
+            document.getElementById("login").style.display = "none";
+            document.getElementById("results-page-login bubble").style.display = "block";
 
-        document.getElementById("results-page-login").style.display = "block";
-
-        document.getElementById("nav-login").hidden = true;
-        document.getElementById("nav-logout").hidden = false;
+            document.getElementById("nav-login").hidden = true;
+            document.getElementById("nav-logout").hidden = false;
+        }
     });
 }
 
+//// ---- UPDATE FORM ---- ////
 const updateForm = document.querySelector("form.dashboard-form");
 const resultsDashboard = document.getElementById("results-page-dashboard");
 const slider = document.getElementById("slider");
@@ -289,7 +475,6 @@ if (updateForm) {
         const requiredInputs = updateForm.querySelectorAll("input[ type='email'], input[type='date']");
         for (const input of requiredInputs) {
             if (input.value.trim() === "") {
-                alert("Please fill out required fields: Email and Start Date");
                 input.style.border = "2px solid red";
                 return;
             } else {
