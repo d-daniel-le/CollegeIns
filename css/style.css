@@ -120,7 +120,7 @@ button.active {
 
 .title-bar {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
     padding: 20px;
     z-index: 1;
     grid-template-rows: 1fr auto;
