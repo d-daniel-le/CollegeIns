@@ -7,38 +7,31 @@ let count = 0;
 
 function search() {
     let inputValue = document.getElementById("search").value;
-    inputValue = inputValue.toUpperCase()
+    inputValue = inputValue.toUpperCase();
     const searchResult = document.getElementById("search-result");
 
     if ("".includes(inputValue.trim())) {
         searchResult.innerHTML = "";
         searchResult.innerHTML += "Which college are you looking for?";
-    } 
-    else if ("BELLEVUE COLLEGE".includes(inputValue.trim())) {
+    } else if ("BELLEVUE COLLEGE".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
         searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
         searchResult.innerHTML += '<a href="html/resources.html">Bellevue College Resources</a> <br>';
         searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } 
-    else if ("BELLEVUE COLLEGE ANALYSIS".includes(inputValue.trim())) {
+    } else if ("BELLEVUE COLLEGE ANALYSIS".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results <br>";
         searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
-    } 
-    else if ("BELLEVUE COLLEGE DASHBOARD".includes(inputValue.trim())) {
+    } else if ("BELLEVUE COLLEGE DASHBOARD".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
-    } 
-    else if ("BELLEVUE COLLEGE RESOURCES".includes(inputValue.trim())){
+    } else if ("BELLEVUE COLLEGE RESOURCES".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results <br>";
         searchResult.innerHTML += '<a href="html/resources.html">Bellevue College Resources</a> <br>';
-
-    } 
-    else if ("BELLEVUE COLLEGE SUMMARY".includes(inputValue.trim())) {
+    } else if ("BELLEVUE COLLEGE SUMMARY".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } 
-    else {
+    } else {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += "The search that you are looking for is not found";
     }
@@ -68,10 +61,9 @@ function display() {
 
     const getImagePanel = document.getElementById("image-panel");
 
-    const getPostLogin1  = document.getElementById("post-login-1");
-    const getPostLogin2  = document.getElementById("post-login-2");
-    const getPostLogin3  = document.getElementById("post-login-3");
-    
+    const getPostLogin1 = document.getElementById("post-login-1");
+    const getPostLogin2 = document.getElementById("post-login-2");
+    const getPostLogin3 = document.getElementById("post-login-3");
 
     const getNavLogin = document.getElementById("nav-login");
     const getNavLogout = document.getElementById("nav-logout");
@@ -83,7 +75,7 @@ function display() {
         getNavLogout.hidden = false;
         getPostLogin1.hidden = false;
         getPostLogin2.hidden = false;
-        getPostLogin3.hidden = false;           
+        getPostLogin3.hidden = false;
         if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
             getSummary5.hidden = true;
             getSummary1.hidden = false;
@@ -113,7 +105,7 @@ function display() {
         getNavLogout.hidden = true;
         getPostLogin1.hidden = true;
         getPostLogin2.hidden = true;
-        getPostLogin3.hidden = true;            
+        getPostLogin3.hidden = true;
         if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
             getSummary5.hidden = false;
             getSummary1.hidden = true;
@@ -147,7 +139,14 @@ function display() {
 
 function logout() {
     localStorage.clear();
-    location.href = "../index.html";
+    const pathname = window.location.pathname;
+    if (pathname.endsWith("/index.html")) {
+        location.href = "./index.html";
+        window.location.reload(true);
+        return;
+    } else {
+        location.href = "../index.html";
+    }
 }
 
 //// ---- MODALS ---- ////
@@ -185,41 +184,41 @@ function showSection(sectionName) {
     signupSection.style.display = "none";
 
     document.getElementById(sectionName).style.display = "block";
-    
+
     clearAllErrors();
 }
 
 function clearAllErrors() {
-    var errorMessages = document.querySelectorAll('.error-message');
+    var errorMessages = document.querySelectorAll(".error-message");
     for (var i = 0; i < errorMessages.length; i++) {
-        errorMessages[i].style.display = 'none';
+        errorMessages[i].style.display = "none";
     }
-    
-    var inputs = document.querySelectorAll('input');
+
+    var inputs = document.querySelectorAll("input");
     for (var j = 0; j < inputs.length; j++) {
-        inputs[j].classList.remove('field-error');
+        inputs[j].classList.remove("field-error");
     }
 }
 
 function showError(fieldId, message) {
-    const errorElement = document.getElementById(fieldId + '-error');
+    const errorElement = document.getElementById(fieldId + "-error");
     const inputElement = document.querySelector(`[name="${fieldId}"]`);
-    
+
     if (errorElement && inputElement) {
         errorElement.textContent = message;
-        errorElement.style.display = 'block';
-        inputElement.classList.add('field-error');
-        inputElement.classList.remove('field-valid');
+        errorElement.style.display = "block";
+        inputElement.classList.add("field-error");
+        inputElement.classList.remove("field-valid");
     }
 }
 
 function hideError(fieldId) {
-    var errorElement = document.getElementById(fieldId + '-error');
+    var errorElement = document.getElementById(fieldId + "-error");
     var inputElement = document.querySelector('[name="' + fieldId + '"]');
-    
+
     if (errorElement && inputElement) {
-        errorElement.style.display = 'none';
-        inputElement.classList.remove('field-error');
+        errorElement.style.display = "none";
+        inputElement.classList.remove("field-error");
     }
 }
 
@@ -227,7 +226,7 @@ function validatePhone(phone) {
     let digitCount = 0;
     for (let i = 0; i < phone.length; i++) {
         const char = phone[i];
-        if (char >= '0' && char <= '9') {
+        if (char >= "0" && char <= "9") {
             digitCount++;
         }
     }
@@ -235,31 +234,38 @@ function validatePhone(phone) {
 }
 
 function formatPhone(input) {
-    let numbersOnly = '';
+    let numbersOnly = "";
     for (let i = 0; i < input.value.length; i++) {
         const char = input.value[i];
-        if (char >= '0' && char <= '9') {
+        if (char >= "0" && char <= "9") {
             numbersOnly += char;
         }
     }
-    
+
     if (numbersOnly.length <= 3) {
         input.value = numbersOnly;
     } else if (numbersOnly.length <= 6) {
-        input.value = '(' + numbersOnly.substring(0, 3) + ') - ' + numbersOnly.substring(3);
+        input.value = "(" + numbersOnly.substring(0, 3) + ") - " + numbersOnly.substring(3);
     } else if (numbersOnly.length <= 10) {
-        input.value = '(' + numbersOnly.substring(0, 3) + ') - ' + numbersOnly.substring(3, 6) + ' - ' + numbersOnly.substring(6);
+        input.value =
+            "(" + numbersOnly.substring(0, 3) + ") - " + numbersOnly.substring(3, 6) + " - " + numbersOnly.substring(6);
     } else {
-        input.value = '(' + numbersOnly.substring(0, 3) + ') - ' + numbersOnly.substring(3, 6) + ' - ' + numbersOnly.substring(6, 10);
+        input.value =
+            "(" +
+            numbersOnly.substring(0, 3) +
+            ") - " +
+            numbersOnly.substring(3, 6) +
+            " - " +
+            numbersOnly.substring(6, 10);
     }
 }
 
 function validateZipcode(zipcode) {
     if (zipcode.length !== 5) return false;
-    
+
     for (let i = 0; i < zipcode.length; i++) {
         const char = zipcode[i];
-        if (char < '0' || char > '9') {
+        if (char < "0" || char > "9") {
             return false;
         }
     }
@@ -267,146 +273,145 @@ function validateZipcode(zipcode) {
 }
 
 function validateEmail(email) {
-    if (!email.includes('@')) return false;
-    if (!email.includes('.')) return false;
-    if (email.indexOf('@') === 0) return false;
-    if (email.endsWith('.')) return false;
-    
+    if (!email.includes("@")) return false;
+    if (!email.includes(".")) return false;
+    if (email.indexOf("@") === 0) return false;
+    if (email.endsWith(".")) return false;
+
     return true;
 }
 
-
 function validatePassword(password) {
-    return password.length >= 1; 
+    return password.length >= 1;
 }
 
 const signupForm = document.getElementById("signup-form");
 if (signupForm) {
     const phoneInput = signupForm.querySelector('input[name="phone"]');
     if (phoneInput) {
-    phoneInput.addEventListener('input', function() {
-        formatPhone(this);
-    });
+        phoneInput.addEventListener("input", function () {
+            formatPhone(this);
+        });
     }
-    
+
     const zipcodeInput = signupForm.querySelector('input[name="zipcode"]');
     if (zipcodeInput) {
-    zipcodeInput.addEventListener('input', function() {
-        var numbersOnly = '';
-        for (var i = 0; i < this.value.length; i++) {
-            var char = this.value[i];
-            if (char >= '0' && char <= '9') {
-                numbersOnly += char;
+        zipcodeInput.addEventListener("input", function () {
+            var numbersOnly = "";
+            for (var i = 0; i < this.value.length; i++) {
+                var char = this.value[i];
+                if (char >= "0" && char <= "9") {
+                    numbersOnly += char;
+                }
             }
-        }
-        this.value = numbersOnly.substring(0, 5);
-    });
+            this.value = numbersOnly.substring(0, 5);
+        });
     }
 }
 
 function validateSignupField(fieldName, value) {
-    switch(fieldName) {
-        case 'firstname':
-        case 'lastname':
+    switch (fieldName) {
+        case "firstname":
+        case "lastname":
             if (!value.trim()) {
-                showError(fieldName, 'This field is required');
+                showError(fieldName, "This field is required");
             } else {
                 hideError(fieldName);
             }
             break;
-        case 'phone':
+        case "phone":
             if (!value.trim()) {
-                showError(fieldName, 'Phone number is required');
+                showError(fieldName, "Phone number is required");
             } else if (!validatePhone(value)) {
-                showError(fieldName, 'Please use format: (123) - 456 - 7890');
+                showError(fieldName, "Please use format: (123) - 456 - 7890");
             } else {
                 hideError(fieldName);
             }
             break;
-        case 'zipcode':
+        case "zipcode":
             if (!value.trim()) {
-                showError(fieldName, 'Zipcode is required');
+                showError(fieldName, "Zipcode is required");
             } else if (!validateZipcode(value)) {
-                showError(fieldName, 'Please enter a valid 5-digit zipcode');
+                showError(fieldName, "Please enter a valid 5-digit zipcode");
             } else {
                 hideError(fieldName);
             }
             break;
-        case 'email':
+        case "email":
             if (!value.trim()) {
-                showError(fieldName, 'Email is required');
+                showError(fieldName, "Email is required");
             } else if (!validateEmail(value)) {
-                showError(fieldName, 'Please enter a valid email address');
+                showError(fieldName, "Please enter a valid email address");
             } else {
                 hideError(fieldName);
             }
             break;
-        case 'password':
-    if (!value.trim()) {
-        showError(fieldName, 'Password is required');
-    } else {
-        hideError(fieldName);
-    }
-    break;
+        case "password":
+            if (!value.trim()) {
+                showError(fieldName, "Password is required");
+            } else {
+                hideError(fieldName);
+            }
+            break;
     }
 }
 
 if (signupForm) {
     signupForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        
+
         const formData = new FormData(signupForm);
         let isValid = true;
-        
-        clearAllErrors();
-        
-        const fields = [
-            { name: 'firstname', message: 'First name is required' },
-            { name: 'lastname', message: 'Last name is required' },
-            { name: 'phone', message: 'Phone number is required' },
-            { name: 'zipcode', message: 'Zipcode is required' },
-            { name: 'email', message: 'Email is required' },
-            { name: 'password', message: 'Password is required' }
-        ];
-        
-    for (var i = 0; i < fields.length; i++) {
-    var field = fields[i];
-    var value = formData.get(field.name);
-    if (!value.trim()) {
-        showError(field.name, field.message);
-        isValid = false;
-    } else {
-        validateSignupField(field.name, value);
-        var errorElement = document.getElementById(field.name + '-error');
-        if (errorElement && errorElement.style.display === 'block') {
-            isValid = false;
-        }
-    }
-}
 
-        const password = formData.get('password');
-        const passwordConfirm = formData.get('passwordconfirm');
+        clearAllErrors();
+
+        const fields = [
+            {name: "firstname", message: "First name is required"},
+            {name: "lastname", message: "Last name is required"},
+            {name: "phone", message: "Phone number is required"},
+            {name: "zipcode", message: "Zipcode is required"},
+            {name: "email", message: "Email is required"},
+            {name: "password", message: "Password is required"}
+        ];
+
+        for (var i = 0; i < fields.length; i++) {
+            var field = fields[i];
+            var value = formData.get(field.name);
+            if (!value.trim()) {
+                showError(field.name, field.message);
+                isValid = false;
+            } else {
+                validateSignupField(field.name, value);
+                var errorElement = document.getElementById(field.name + "-error");
+                if (errorElement && errorElement.style.display === "block") {
+                    isValid = false;
+                }
+            }
+        }
+
+        const password = formData.get("password");
+        const passwordConfirm = formData.get("passwordconfirm");
         if (!passwordConfirm.trim()) {
-            showError('passwordconfirm', 'Please confirm your password');
+            showError("passwordconfirm", "Please confirm your password");
             isValid = false;
         } else if (password !== passwordConfirm) {
-            showError('passwordconfirm', 'Passwords do not match');
+            showError("passwordconfirm", "Passwords do not match");
             isValid = false;
         }
-        
+
         if (!isValid) {
             return;
         }
-        
+
         const data = {};
         const resultsList = document.getElementById("results");
 
         resultsList.innerHTML = "";
 
-        formData.forEach(function(value, name) {
-        data[name] = value;
-        resultsList.append(name + ': ' + value);
-        resultsList.append(document.createElement("br"));
+        formData.forEach(function (value, name) {
+            data[name] = value;
+            resultsList.append(name + ": " + value);
+            resultsList.append(document.createElement("br"));
         });
 
         localStorage.setItem("signupData", JSON.stringify(data));
@@ -428,24 +433,24 @@ if (loginForm) {
 
         const formData = new FormData(loginForm);
         let isValid = true;
-        
+
         clearAllErrors();
-        
-        const email = formData.get('login-email');
+
+        const email = formData.get("login-email");
         if (!email || !email.trim()) {
-            showError('login-email', 'Email is required');
+            showError("login-email", "Email is required");
             isValid = false;
         } else if (!validateEmail(email)) {
-            showError('login-email', 'Please enter a valid email address');
+            showError("login-email", "Please enter a valid email address");
             isValid = false;
         }
-        
-        const password = formData.get('login-password');
+
+        const password = formData.get("login-password");
         if (!password || !password.trim()) {
-            showError('login-password', 'Password is required');
+            showError("login-password", "Password is required");
             isValid = false;
         }
-        
+
         if (!isValid) {
             return;
         }
@@ -456,9 +461,9 @@ if (loginForm) {
         if (resultsListLogin) {
             resultsListLogin.innerHTML = "";
 
-            formData.forEach(function(value, name) {
+            formData.forEach(function (value, name) {
                 data[name] = value;
-                resultsListLogin.append(name + ': ' + value);
+                resultsListLogin.append(name + ": " + value);
                 resultsListLogin.append(document.createElement("br"));
             });
 
@@ -488,47 +493,47 @@ if (slider && sliderValue) {
 }
 
 function validateEmail(email) {
-    if (!email.includes('@')) return false;
-    if (!email.includes('.')) return false;
-    if (email.indexOf('@') === 0) return false;
-    if (email.endsWith('.')) return false;
-    
+    if (!email.includes("@")) return false;
+    if (!email.includes(".")) return false;
+    if (email.indexOf("@") === 0) return false;
+    if (email.endsWith(".")) return false;
+
     return true;
 }
 
 function validateUpdateDate(dateString) {
     if (!dateString) return false;
-    
+
     const selectedDate = new Date(dateString);
     const today = new Date();
     const selectedDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate());
     const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    
+
     return selectedDay >= todayDay;
 }
 
 function showFieldError(fieldId, message) {
     hideFieldError(fieldId);
-    
+
     const field = document.getElementById(fieldId);
     if (field) {
-        const errorElement = document.createElement('div');
-        errorElement.className = 'field-error-message';
-        errorElement.id = fieldId + '-error';
-        errorElement.style.color = 'red';
-        errorElement.style.fontSize = '0.8em';
-        errorElement.style.marginTop = '5px';
+        const errorElement = document.createElement("div");
+        errorElement.className = "field-error-message";
+        errorElement.id = fieldId + "-error";
+        errorElement.style.color = "red";
+        errorElement.style.fontSize = "0.8em";
+        errorElement.style.marginTop = "5px";
         errorElement.textContent = message;
-        
+
         field.after(errorElement);
         field.style.border = "2px solid red";
     }
 }
 
 function hideFieldError(fieldId) {
-    const errorElement = document.getElementById(fieldId + '-error');
+    const errorElement = document.getElementById(fieldId + "-error");
     const field = document.getElementById(fieldId);
-    
+
     if (errorElement) {
         errorElement.remove();
     }
@@ -543,29 +548,29 @@ if (updateForm) {
 
         let isValid = true;
 
-        hideFieldError('email');
-        hideFieldError('update-date');
+        hideFieldError("email");
+        hideFieldError("update-date");
 
-        const emailInput = document.getElementById('email');
+        const emailInput = document.getElementById("email");
         if (emailInput) {
             const emailValue = emailInput.value.trim();
             if (emailValue === "") {
-                showFieldError('email', 'Email is required');
+                showFieldError("email", "Email is required");
                 isValid = false;
             } else if (!validateEmail(emailValue)) {
-                showFieldError('email', 'Please enter a valid email address (e.g., user@example.com)');
+                showFieldError("email", "Please enter a valid email address (e.g., user@example.com)");
                 isValid = false;
             }
         }
 
-        const dateInput = document.getElementById('update-date');
+        const dateInput = document.getElementById("update-date");
         if (dateInput) {
             const dateValue = dateInput.value;
             if (dateValue === "") {
-                showFieldError('update-date', 'Start date is required');
+                showFieldError("update-date", "Start date is required");
                 isValid = false;
             } else if (!validateUpdateDate(dateValue)) {
-                showFieldError('update-date', 'Please select a date in the future');
+                showFieldError("update-date", "Please select a date in the future");
                 isValid = false;
             }
         }
@@ -588,31 +593,31 @@ if (updateForm) {
             }
 
             if (selectedDataTypes.length > 0) {
-                resultsDashboard.append('datatype: ' + selectedDataTypes.join(' '));
-                resultsDashboard.appendChild(document.createElement('br'));
-                data['datatype'] = selectedDataTypes.join(' ');
+                resultsDashboard.append("datatype: " + selectedDataTypes.join(" "));
+                resultsDashboard.appendChild(document.createElement("br"));
+                data["datatype"] = selectedDataTypes.join(" ");
             }
 
-            formData.forEach(function(value, name) {
-                if (name !== 'graphs' && name !== 'headcount' && name !== 'coa') {
+            formData.forEach(function (value, name) {
+                if (name !== "graphs" && name !== "headcount" && name !== "coa") {
                     data[name] = value;
-                    resultsDashboard.append(name + ': ' + value);
-                    resultsDashboard.appendChild(document.createElement('br'));
+                    resultsDashboard.append(name + ": " + value);
+                    resultsDashboard.appendChild(document.createElement("br"));
                 }
             });
 
-            localStorage.setItem('updatePreferences', JSON.stringify(data));
-            updateForm.style.display = 'none';
-            document.getElementById('results-page-dashboard').style.display = 'block';
+            localStorage.setItem("updatePreferences", JSON.stringify(data));
+            updateForm.style.display = "none";
+            document.getElementById("results-page-dashboard").style.display = "block";
         }
     });
 }
 
-const output = document.getElementById('slider-value');
+const output = document.getElementById("slider-value");
 if (output && slider) {
     output.textContent = slider.value;
 
-    slider.addEventListener('input', function() {
+    slider.addEventListener("input", function () {
         output.textContent = slider.value;
     });
 }
