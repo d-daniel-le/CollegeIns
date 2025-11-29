@@ -6,31 +6,33 @@ let count = 0;
 // - Search on index.html - //
 
 function search() {
-    const inputValue = document.getElementById("search").value;
+    let inputValue = document.getElementById("search").value;
+    inputValue = inputValue.toUpperCase()
     const searchResult = document.getElementById("search-result");
 
-    if (inputValue.toUpperCase() === "BELLEVUE COLLEGE") {
-        searchResult.innerHTML = "Results: <br>";
-        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
-        searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
-        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } else if (inputValue.toUpperCase() === "BELLEVUE COLLEGE ") {
-        searchResult.innerHTML = "Results: <br>";
-        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
-        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } else if (inputValue.toUpperCase() === "BELLEVUE COLLEGE ANALYSIS") {
-        searchResult.innerHTML = "Results <br>";
-        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
-    } else if (inputValue.toUpperCase() === "BELLEVUE COLLEGE SUMMARY") {
-        searchResult.innerHTML = "Results: <br>";
-        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } else if (inputValue.toUpperCase() === "BELLEVUE COLLEGE DASHBOARD") {
-        searchResult.innerHTML = "Results: <br>";
-        searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
-    } else if (inputValue.toUpperCase() === "") {
+    if ("".includes(inputValue.trim())) {
         searchResult.innerHTML = "";
         searchResult.innerHTML += "Which college are you looking for?";
-    } else {
+    } 
+    else if ("BELLEVUE COLLEGE".includes(inputValue.trim())) {
+        searchResult.innerHTML = "Results: <br>";
+        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
+        searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
+        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
+    } 
+    else if ("BELLEVUE COLLEGE ANALYSIS".includes(inputValue.trim())) {
+        searchResult.innerHTML = "Results <br>";
+        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
+    } 
+    else if ("BELLEVUE COLLEGE SUMMARY".includes(inputValue.trim())) {
+        searchResult.innerHTML = "Results: <br>";
+        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
+    } 
+    else if ("BELLEVUE COLLEGE DASHBOARD".includes(inputValue.trim())) {
+        searchResult.innerHTML = "Results: <br>";
+        searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
+    } 
+    else {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += "The search that you are looking for is not found";
     }
@@ -40,25 +42,10 @@ function search() {
 
 // - Display summary - //
 function display() {
-    const getSummary1 = document.getElementById("summary-1");
-    const getSummary2 = document.getElementById("summary-2");
-    const getSummary3 = document.getElementById("summary-3");
-    const getSummary4 = document.getElementById("summary-4");
-    const getSummary5 = document.getElementById("summary-5");
-
-    const getAnalysis1 = document.getElementById("analysis-1");
-    const getAnalysis2 = document.getElementById("analysis-2");
-    const getAnalysis3 = document.getElementById("analysis-3");
-    const getAnalysis4 = document.getElementById("analysis-4");
-    const getAnalysis5 = document.getElementById("analysis-5");
-
-    const getResource1 = document.getElementById("resource-1");
-    const getResource2 = document.getElementById("resource-2");
-    const getResource3 = document.getElementById("resource-3");
-    const getResource4 = document.getElementById("resource-4");
-    const getResource5 = document.getElementById("resource-5");
-
-    const getImagePanel = document.getElementById("image-panel");
+    const getPostLogin1  = document.getElementById("post-login-1");
+    const getPostLogin2  = document.getElementById("post-login-2");
+    const getPostLogin3  = document.getElementById("post-login-3");
+    
 
     const getNavLogin = document.getElementById("nav-login");
     const getNavLogout = document.getElementById("nav-logout");
@@ -68,55 +55,23 @@ function display() {
     if (getLoginData !== null || getSignUpData !== null) {
         getNavLogin.hidden = true;
         getNavLogout.hidden = false;
-        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
-            getSummary5.hidden = true;
-            getSummary1.hidden = false;
-            getSummary2.hidden = false;
-            getSummary3.hidden = false;
-            getSummary4.hidden = false;
-            getImagePanel.hidden = false;
-        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
-            getAnalysis5.hidden = true;
-            getAnalysis1.hidden = false;
-            getAnalysis2.hidden = false;
-            getAnalysis3.hidden = false;
-            getAnalysis4.hidden = false;
-            getImagePanel.hidden = false;
-        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
-            getResource5.hidden = true;
-            getResource1.hidden = false;
-            getResource2.hidden = false;
-            getResource3.hidden = false;
-            getResource4.hidden = false;
-            getImagePanel.hidden = false;
-        } else {
+        if (getPostLogin1 && getPostLogin2 && getPostLogin3) {
+            getPostLogin1.hidden = false;
+            getPostLogin2.hidden = false;
+            getPostLogin3.hidden = false;           
+        } 
+        else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
         }
     } else {
         getNavLogin.hidden = false;
         getNavLogout.hidden = true;
-        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
-            getSummary5.hidden = false;
-            getSummary1.hidden = true;
-            getSummary2.hidden = true;
-            getSummary3.hidden = true;
-            getSummary4.hidden = true;
-            getImagePanel.hidden = true;
-        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
-            getAnalysis5.hidden = false;
-            getAnalysis1.hidden = true;
-            getAnalysis2.hidden = true;
-            getAnalysis3.hidden = true;
-            getAnalysis4.hidden = true;
-            getImagePanel.hidden = true;
-        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
-            getResource5.hidden = false;
-            getResource1.hidden = true;
-            getResource2.hidden = true;
-            getResource3.hidden = true;
-            getResource4.hidden = true;
-            getImagePanel.hidden = true;
-        } else {
+        if (getPostLogin1 && getPostLogin2 && getPostLogin3) {
+            getPostLogin1.hidden = true;
+            getPostLogin2.hidden = true;
+            getPostLogin3.hidden = true;            
+        } 
+        else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
         }
     }
@@ -128,7 +83,7 @@ function display() {
 
 function logout() {
     localStorage.clear();
-    location.reload();
+    location.href = "../index.html";
 }
 
 //// ---- MODALS ---- ////

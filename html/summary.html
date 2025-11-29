@@ -20,10 +20,10 @@
                 <div class="title-item-1">
                     <h1>Summary | <a href="../index.html"><img class="logo" src="../images/collegeins-logo.png" alt="CollegeIns logo"></a></h1>
                     <button class="title-button" onclick="location.href='../index.html'">Home</button>
-                    <button class="title-button" onclick="location.href='./dashboard.html'">Dashboard</button>
-                    <button class="title-button" onclick="location.href='./analysis.html'">Analysis</button>
-                    <button class="active title-button" onclick="location.href='./summary.html'">Summary</button>
-                    <button class="title-button" onclick="location.href='./resources.html'">Resources</button>
+                    <button class="title-button " onclick="location.href='./dashboard.html'">Dashboard</button>
+                    <button class="title-button" id="post-login-1" onclick="location.href='./analysis.html'" hidden>Analysis</button>
+                    <button class="title-button active" id="post-login-2" onclick="location.href='./summary.html'" hidden>Summary</button>
+                    <button class="title-button" id="post-login-3" onclick="location.href='./resources.html'" hidden>Resources</button>
                     <button class="title-button" onclick="location.href='./about.html'">About</button>
                 </div>
                 <div class="title-item-2">
@@ -38,16 +38,16 @@
 
         <div class="grid-container">
             <div class="content-area">
-                <div class="summary-item-1 bubble" id="summary-1" hidden>
+                <div class="summary-item-1 bubble" id="summary-1">
                     <h3>CollegeIns Summary</h3>
                     <p>
                         CollegeIns has produced much clarity in providing the college vital performance metrics on the Dashboard. It makes it easy for students to see how colleges perform on academics, student support, and program success. The summary elaborates on what all its parameters mean, graduation rates, transfer success, program efficiency, and student support services. This helps students get a good picture of how each school fits their objectives.
                     </p>
                 </div>
-                <div class="image-panel" id="image-panel" hidden>
+                <div class="image-panel" id="image-panel">
                     <img src="../images/image-panel/collegeins-diploma-banner.jpg" width="1140px" alt="A rolled-up diploma.">
                 </div>
-                <div class="summary-item-2 bubble" id="summary-2" hidden>
+                <div class="summary-item-2 bubble" id="summary-2">
                     <h3>Strengths</h3>
                     <p>
                         Many colleges listed on CollegeIns are proving to be very strong based on their dashboard data. For instance, Bellevue College maintains a strong transfer rate to major 4-year universities, such as the University of Washington (UW) and Washington State University (WSU). This high transfer success is also mirrored in the success of numerous highly sought academic pathways.
@@ -62,7 +62,7 @@
                         Support systems such as advising services, financial aid assistance, disability resource centers, and tutoring are other contributors to good student outcomes. Colleges excelling in those areas offer a greater degree of certainty for their students and steady progress towards completion or transfer.
                     </p>
                 </div>
-                <div class="summary-item-3 bubble" id="summary-3" hidden>
+                <div class="summary-item-3 bubble" id="summary-3">
                     <h3>Weaknesses</h3>
                     <p>
                         The higher ranked programs are, however, are in need of improvement, as we see in the Dashboard data. Some departments are graduating at lower rates than their peers, evidently pointing to inadequate resource allocation, faculty accessibility, or perhaps structures of academic support.
@@ -74,7 +74,7 @@
                         Another recurring challenge evident in the summary data is the weak digital outreach presence. Colleges with stagnant program web pages or poorly managed online resources might erect barriers for students trying to understand course information, faculty qualification, or program relevance. Weak digital outreach impacts less visibility, making it more difficult for students to assess the college's strengths in academics.
                     </p>
                 </div>
-                <div class="summary-item-4 bubble" id="summary-4" hidden>
+                <div class="summary-item-4 bubble" id="summary-4">
                     <h3>Overall Assessment</h3>
                     <p>
                         This summary offers an integrated appraisal of each college that balances performance with program specific data, student success, and support services. In such scenarios, students can quickly assess whether a college fits their own academic and personal needs.
