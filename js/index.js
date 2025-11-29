@@ -18,19 +18,25 @@ function search() {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
         searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
+        searchResult.innerHTML += '<a href="html/resources.html">Bellevue College Resources</a> <br>';
         searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
     } 
     else if ("BELLEVUE COLLEGE ANALYSIS".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results <br>";
         searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
     } 
-    else if ("BELLEVUE COLLEGE SUMMARY".includes(inputValue.trim())) {
-        searchResult.innerHTML = "Results: <br>";
-        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } 
     else if ("BELLEVUE COLLEGE DASHBOARD".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
+    } 
+    else if ("BELLEVUE COLLEGE RESOURCES".includes(inputValue.trim())){
+        searchResult.innerHTML = "Results <br>";
+        searchResult.innerHTML += '<a href="html/resources.html">Bellevue College Resources</a> <br>';
+
+    } 
+    else if ("BELLEVUE COLLEGE SUMMARY".includes(inputValue.trim())) {
+        searchResult.innerHTML = "Results: <br>";
+        searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
     } 
     else {
         searchResult.innerHTML = "Results: <br>";
@@ -108,9 +114,28 @@ function display() {
         getPostLogin1.hidden = true;
         getPostLogin2.hidden = true;
         getPostLogin3.hidden = true;            
-        if (getPostLogin1 && getPostLogin2 && getPostLogin3) {
-        } 
-        else {
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
+            getSummary5.hidden = false;
+            getSummary1.hidden = true;
+            getSummary2.hidden = true;
+            getSummary3.hidden = true;
+            getSummary4.hidden = true;
+            getImagePanel.hidden = true;
+        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
+            getAnalysis5.hidden = false;
+            getAnalysis1.hidden = true;
+            getAnalysis2.hidden = true;
+            getAnalysis3.hidden = true;
+            getAnalysis4.hidden = true;
+            getImagePanel.hidden = true;
+        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
+            getResource5.hidden = false;
+            getResource1.hidden = true;
+            getResource2.hidden = true;
+            getResource3.hidden = true;
+            getResource4.hidden = true;
+            getImagePanel.hidden = true;
+        } else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
         }
     }
