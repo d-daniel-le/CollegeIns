@@ -1250,7 +1250,7 @@ footer {
 
 @media (min-width: 769px){
     .grid-container {
-        grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+        grid-template-columns: 1fr minmax(0, 1200px) 1fr;
     }
     
     .content-area,
