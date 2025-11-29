@@ -78,9 +78,28 @@ function display() {
         getPostLogin1.hidden = false;
         getPostLogin2.hidden = false;
         getPostLogin3.hidden = false;           
-        if (getPostLogin1 && getPostLogin2 && getPostLogin3) {
-        } 
-        else {
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
+            getSummary5.hidden = true;
+            getSummary1.hidden = false;
+            getSummary2.hidden = false;
+            getSummary3.hidden = false;
+            getSummary4.hidden = false;
+            getImagePanel.hidden = false;
+        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
+            getAnalysis5.hidden = true;
+            getAnalysis1.hidden = false;
+            getAnalysis2.hidden = false;
+            getAnalysis3.hidden = false;
+            getAnalysis4.hidden = false;
+            getImagePanel.hidden = false;
+        } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
+            getResource5.hidden = true;
+            getResource1.hidden = false;
+            getResource2.hidden = false;
+            getResource3.hidden = false;
+            getResource4.hidden = false;
+            getImagePanel.hidden = false;
+        } else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
         }
     } else {
