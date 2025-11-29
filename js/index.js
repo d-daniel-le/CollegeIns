@@ -42,6 +42,26 @@ function search() {
 
 // - Display summary - //
 function display() {
+    const getSummary1 = document.getElementById("summary-1");
+    const getSummary2 = document.getElementById("summary-2");
+    const getSummary3 = document.getElementById("summary-3");
+    const getSummary4 = document.getElementById("summary-4");
+    const getSummary5 = document.getElementById("summary-5");
+
+    const getAnalysis1 = document.getElementById("analysis-1");
+    const getAnalysis2 = document.getElementById("analysis-2");
+    const getAnalysis3 = document.getElementById("analysis-3");
+    const getAnalysis4 = document.getElementById("analysis-4");
+    const getAnalysis5 = document.getElementById("analysis-5");
+
+    const getResource1 = document.getElementById("resource-1");
+    const getResource2 = document.getElementById("resource-2");
+    const getResource3 = document.getElementById("resource-3");
+    const getResource4 = document.getElementById("resource-4");
+    const getResource5 = document.getElementById("resource-5");
+
+    const getImagePanel = document.getElementById("image-panel");
+
     const getPostLogin1  = document.getElementById("post-login-1");
     const getPostLogin2  = document.getElementById("post-login-2");
     const getPostLogin3  = document.getElementById("post-login-3");
@@ -55,10 +75,10 @@ function display() {
     if (getLoginData !== null || getSignUpData !== null) {
         getNavLogin.hidden = true;
         getNavLogout.hidden = false;
+        getPostLogin1.hidden = false;
+        getPostLogin2.hidden = false;
+        getPostLogin3.hidden = false;           
         if (getPostLogin1 && getPostLogin2 && getPostLogin3) {
-            getPostLogin1.hidden = false;
-            getPostLogin2.hidden = false;
-            getPostLogin3.hidden = false;           
         } 
         else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
@@ -66,10 +86,10 @@ function display() {
     } else {
         getNavLogin.hidden = false;
         getNavLogout.hidden = true;
+        getPostLogin1.hidden = true;
+        getPostLogin2.hidden = true;
+        getPostLogin3.hidden = true;            
         if (getPostLogin1 && getPostLogin2 && getPostLogin3) {
-            getPostLogin1.hidden = true;
-            getPostLogin2.hidden = true;
-            getPostLogin3.hidden = true;            
         } 
         else {
             console.log("No Analysis, Summary or Resources was found on this page. ");
