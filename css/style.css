@@ -212,20 +212,20 @@ footer {
     grid-row: 3;
 }
 .footer-link-4 {
-    grid-column: 1;
-    grid-row: 4;
-}
-.footer-link-5 {
     grid-column: 2;
     grid-row: 1;
 }
-.footer-link-6 {
+.footer-link-5 {
     grid-column: 2;
     grid-row: 2;
 }
-.footer-link-7 {
+.footer-link-6 {
     grid-column: 2;
     grid-row: 3;
+}
+.footer-link-7 {
+    grid-column: 3;
+    grid-row: 1;
 }
 
 .footer-link-1,
@@ -1332,5 +1332,5 @@ img {
     background-position: center;
 }
 .footer-area{
-        grid-column: 1 / -1
+        grid-column: 2;
 }
