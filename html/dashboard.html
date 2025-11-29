@@ -26,11 +26,12 @@
                     <button class="title-button" id="post-login-3" onclick="location.href='./resources.html'" hidden>Resources</button>
                     <button class="title-button" onclick="location.href='./about.html'">About</button>
                 </div>
-                <div class="title-item-2">
-                    <button class="title-login" onclick="location.href='./login.html'" id="nav-login" hidden>Login</button>
-                    <button class="title-login" onclick="logout()" id="nav-logout" hidden>Logout</button>
-                    <img class="login-image" src="../images/empty-profile.jpg" alt="Profile">
-
+                <div class="title-item-2-grid">
+                    <div class="title-item-2">
+                        <button class="title-login" onclick="location.href='./login.html'" id="nav-login" hidden>Login</button>
+                        <button class="title-login" onclick="logout()" id="nav-logout" hidden>Logout</button>
+                        <img class="login-image" src="../images/empty-profile.jpg" alt="Profile">
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,6 +56,11 @@
                     <img src="../images/dashboard/dashboard-line-chart-2.png" alt="A line chart representing Bellevue College performance toward student success goals." onclick="openModalIFrame(this)" data-link="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" class="dashboard-images">
                     <b>Source: </b><a href="https://tableau.sbctc.edu/t/BC/views/ATDDashboard/PerformanceTowardGoals?%3Aembed=y&%3AisGuestRedirectFromVizportal=y" target="_blank">Bellevue College Data Source</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="grid-container-dashboard">
+            <div class="content-area-dashboard">
                 <div class="dashboard-item-5 bubble">
                     <h3>Headcount 2024-2025</h3>
                     <h2>21,115 students</h2>
@@ -63,7 +69,11 @@
                     <h3>Annual cost of attendance</h3>
                     <h2>$27,959</h2>
                 </div>
+            </div>
+        </div>
 
+        <div class="grid-container">
+            <div class="content-area">
                 <div class="dashboard-item-7 bubble">
                     <form class="dashboard-form bubble">
                         <label for="email">Provide your email address for updates on new data:</label>
@@ -137,7 +147,7 @@
                 <a href="./analysis.html" class="footer-link-3">Analysis (Login required)</a>
                 <a href="./summary.html" class="footer-link-4">Summary (Login required)</a>
                 <a href="./resources.html" class="footer-link-5">Resources (Login required)</a>
-                <a href="./login.html" class="footer-link-6">Login</a>
+                <a href="./login.html" class="footer-link-6">Login / Sign up</a>
                 <a href="./about.html" class="footer-link-7">About us</a>
             </div>
         </footer>
