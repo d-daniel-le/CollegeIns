@@ -46,12 +46,7 @@ function display() {
     const getSummary3 = document.getElementById("summary-3");
     const getSummary4 = document.getElementById("summary-4");
     const getSummary5 = document.getElementById("summary-5");
-
-    const getAnalysis1 = document.getElementById("analysis-1");
-    const getAnalysis2 = document.getElementById("analysis-2");
-    const getAnalysis3 = document.getElementById("analysis-3");
-    const getAnalysis4 = document.getElementById("analysis-4");
-    const getAnalysis5 = document.getElementById("analysis-5");
+    const getSummary6 = document.getElementById("summary-6");
 
     const getResource1 = document.getElementById("resource-1");
     const getResource2 = document.getElementById("resource-2");
@@ -74,19 +69,13 @@ function display() {
         getNavLogout.hidden = false;
         getPostLogin1.hidden = false;
         getPostLogin2.hidden = false;
-        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
-            getSummary5.hidden = true;
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5 && getSummary6) {
+            getSummary6.hidden = true;
             getSummary1.hidden = false;
             getSummary2.hidden = false;
             getSummary3.hidden = false;
             getSummary4.hidden = false;
-            getImagePanel.hidden = false;
-        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
-            getAnalysis5.hidden = true;
-            getAnalysis1.hidden = false;
-            getAnalysis2.hidden = false;
-            getAnalysis3.hidden = false;
-            getAnalysis4.hidden = false;
+            getSummary5.hidden = false;
             getImagePanel.hidden = false;
         } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
             getResource5.hidden = true;
@@ -103,19 +92,13 @@ function display() {
         getNavLogout.hidden = true;
         getPostLogin1.hidden = true;
         getPostLogin2.hidden = true;
-        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
-            getSummary5.hidden = false;
+        if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5 && getSummary6) {
+            getSummary6.hidden = false;
             getSummary1.hidden = true;
             getSummary2.hidden = true;
             getSummary3.hidden = true;
             getSummary4.hidden = true;
-            getImagePanel.hidden = true;
-        } else if (getAnalysis1 && getAnalysis2 && getAnalysis3 && getAnalysis4 && getImagePanel && getAnalysis5) {
-            getAnalysis5.hidden = false;
-            getAnalysis1.hidden = true;
-            getAnalysis2.hidden = true;
-            getAnalysis3.hidden = true;
-            getAnalysis4.hidden = true;
+            getSummary5.hidden = true;
             getImagePanel.hidden = true;
         } else if (getResource1 && getResource2 && getResource3 && getResource4 && getImagePanel && getResource5) {
             getResource5.hidden = false;

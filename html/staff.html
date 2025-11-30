@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Help, I Lost My Shoe">
+        <meta name="robots" content="noindex, nofollow">
+        <title>CollegeIns - Staff Directory</title>
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <style>
+            button[hidden]{
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body class="staff-page" onload="display()">
+        <div class="title-grid">
+            <div class="title-bar">
+                <div class="title-item-1">
+                    <h1>Contact Us | <a href="../index.html"><img class="logo" src="../images/collegeins-logo.png" alt="CollegeIns logo"></a></h1>
+                    <button class="title-button" onclick="location.href='../index.html'">Home</button>
+                    <button class="title-button" onclick="location.href='./dashboard.html'">Dashboard</button>
+                    <button class="title-button" id="post-login-1" onclick="location.href='./analysis.html'" hidden>Analysis</button>
+                    <button class="title-button" id="post-login-2" onclick="location.href='./summary.html'" hidden>Summary</button>
+                    <button class="title-button" id="post-login-3" onclick="location.href='./resources.html'" hidden>Resources</button>
+                    <button class="title-button" onclick="location.href='./about.html'">About</button>
+                </div>
+                <div class="title-item-2-grid">
+                    <div class="title-item-2">
+                        <button class="title-login" onclick="location.href='./login.html'" id="nav-login" hidden>Login</button>
+                        <button class="title-login" onclick="logout()" id="nav-logout" hidden>Logout</button>
+                        <img class="login-image" src="../images/empty-profile.jpg" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="content-area-banner">
+                <div class="staff-item-1 bubble">
+                    <h3>Meet the CollegeIns Team</h3>
+                    <p>
+                        Our staff is dedicated to helping students navigate the first steps of college with
+                        confidence.<br>
+                        From academic planning to wellness support, the CollegeIns team brings together our expertise to
+                        support every students journey.
+                    </p>
+                </div>
+
+                <div class="staff-item-2 bubble">
+                    <h3>Team Operations</h3>
+                    <div class="staff-member">
+                        <img src="../images/empty-profile.jpg" alt="Profile placeholder">
+                        <div class="staff-info">
+                            <p><strong>Daniel Le</strong><br>Project Lead</p>
+                        </div>
+                    </div>
+                    <div class="staff-member">
+                        <img src="../images/empty-profile.jpg" alt="Profile placeholder">
+                        <div class="staff-info">
+                            <p><strong>Tony Kevin</strong><br>Team Facilitator</p>
+                        </div>
+                    </div>
+                    <div class="staff-member">
+                        <img src="../images/empty-profile.jpg" alt="Profile placeholder">
+                        <div class="staff-info">
+                            <p><strong>Erik Williams</strong><br>Communications Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff-item-3 bubble">
+                    <h3>Platform Operations</h3>
+                    <div class="staff-member">
+                        <img src="../images/empty-profile.jpg" alt="Profile placeholder">
+                        <div class="staff-info">
+                            <p><strong>Kristina Yankovsky</strong><br>Document Management</p>
+                        </div>
+                    </div>
+                    <div class="staff-member">
+                        <img src="../images/empty-profile.jpg" alt="Profile placeholder">
+                        <div class="staff-info">
+                            <p><strong>Cedar Quarmby</strong><br>Github Administrator</p>
+                        </div>
+                    </div>
+                    <div class="staff-member">
+                        <img src="../images/empty-profile.jpg" alt="Profile placeholder">
+                        <div class="staff-info">
+                            <p><strong>Ali Gul</strong><br>CSS Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-area">
+                <a href="../index.html" class="footer-link-1">Home</a>
+                <a href="./dashboard.html" class="footer-link-2">Dashboard</a>
+                <a href="./summary.html" class="footer-link-3">Summary (Login required)</a>
+                <a href="./resources.html" class="footer-link-4">Resources (Login required)</a>
+                <a href="./login.html" class="footer-link-5">Login / Sign up</a>
+                <a href="./about.html" class="footer-link-6">About us</a>
+                <a href="./staff.html" class="footer-link-7">Staff directory</a>
+                <a href="./contact.html" class="footer-link-8">Contact us</a>
+            </div>
+        </footer>
+
+        <script src="../js/index.js"></script>
+    </body>
+</html>
