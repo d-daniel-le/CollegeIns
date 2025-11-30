@@ -63,7 +63,6 @@ function display() {
 
     const getPostLogin1 = document.getElementById("post-login-1");
     const getPostLogin2 = document.getElementById("post-login-2");
-    const getPostLogin3 = document.getElementById("post-login-3");
 
     const getNavLogin = document.getElementById("nav-login");
     const getNavLogout = document.getElementById("nav-logout");
@@ -75,7 +74,6 @@ function display() {
         getNavLogout.hidden = false;
         getPostLogin1.hidden = false;
         getPostLogin2.hidden = false;
-        getPostLogin3.hidden = false;
         if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
             getSummary5.hidden = true;
             getSummary1.hidden = false;
@@ -105,7 +103,6 @@ function display() {
         getNavLogout.hidden = true;
         getPostLogin1.hidden = true;
         getPostLogin2.hidden = true;
-        getPostLogin3.hidden = true;
         if (getSummary1 && getSummary2 && getSummary3 && getSummary4 && getImagePanel && getSummary5) {
             getSummary5.hidden = false;
             getSummary1.hidden = true;
