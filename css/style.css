@@ -178,9 +178,9 @@ button.active {
     grid-row: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     padding: 20px;
     z-index: 1;
-    grid-template-rows: 1fr auto;
     background-color: #eeeeea;
     text-align: left;
 }
@@ -220,8 +220,16 @@ footer {
     grid-row: 2;
 }
 .footer-link-6 {
+    grid-column: 2;
+    grid-row: 3;
+}
+.footer-link-7 {
     grid-column: 3;
     grid-row: 1;
+}
+.footer-link-8 {
+    grid-column: 3;
+    grid-row: 2;
 }
 
 .footer-link-1,
@@ -229,7 +237,9 @@ footer {
 .footer-link-3,
 .footer-link-4,
 .footer-link-5,
-.footer-link-6 {
+.footer-link-6,
+.footer-link-7,
+.footer-link-8 {
     margin: 5px;
 }
 
@@ -391,32 +401,6 @@ footer {
     padding: 20px;
 }
 
-/* Analysis page formatting */
-
-.analysis-item-1 {
-    grid-column: 1 / span 3;
-    grid-row: 4;
-}
-.analysis-item-2 {
-    grid-column: 1;
-    grid-row: 3;
-}
-.analysis-item-3 {
-    grid-column: 2;
-    grid-row: 3;
-}
-.analysis-item-4 {
-    grid-column: 3;
-    grid-row: 3;
-}
-.analysis-item-5 {
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    padding: 25px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
 /* Summary page formatting */
 
 .summary-item-1 {
@@ -437,6 +421,13 @@ footer {
 }
 .summary-item-5 {
     grid-column: 1 / span 3;
+    grid-row: 4;
+    padding: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.summary-item-6 {
+    grid-column: 1 / span 3;
     grid-row: 1;
     border-radius: 25px;
     margin: 10px;
@@ -448,7 +439,8 @@ footer {
 .summary-item-1,
 .summary-item-2,
 .summary-item-3,
-.summary-item-4 {
+.summary-item-4,
+.summary-item-5 {
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -486,6 +478,50 @@ footer {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
+}
+
+/* Contact page formatting */
+.contact-page .content-area-banner {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Staff page formatting */
+
+.staff-page .content-area-banner {
+    grid-template-columns: 1fr 1fr;
+}
+
+.staff-item-1 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.staff-item-2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.staff-item-3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.staff-member {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.staff-member img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.staff-info p {
+    margin: 0;
 }
 
 /* About page formatting */
