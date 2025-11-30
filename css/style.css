@@ -512,6 +512,9 @@ footer {
     margin-bottom: 10px;
     text-align: left;
 }
+.staff-info{
+    padding-top: 2%;
+}
 
 .staff-member img {
     width: 60px;

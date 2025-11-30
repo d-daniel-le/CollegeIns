@@ -15,13 +15,9 @@ function search() {
         searchResult.innerHTML += "Which college are you looking for?";
     } else if ("BELLEVUE COLLEGE".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results: <br>";
-        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
         searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
         searchResult.innerHTML += '<a href="html/resources.html">Bellevue College Resources</a> <br>';
         searchResult.innerHTML += '<a href="html/summary.html">Bellevue College Summary</a> <br>';
-    } else if ("BELLEVUE COLLEGE ANALYSIS".includes(inputValue.trim())) {
-        searchResult.innerHTML = "Results <br>";
-        searchResult.innerHTML += '<a href="html/analysis.html">Bellevue College Analysis</a> <br>';
     } else if ("BELLEVUE COLLEGE DASHBOARD".includes(inputValue.trim())) {
         searchResult.innerHTML = "Results: <br>";
         searchResult.innerHTML += '<a href="html/dashboard.html">Bellevue College Dashboard</a> <br>';
@@ -85,7 +81,7 @@ function display() {
             getResource4.hidden = false;
             getImagePanel.hidden = false;
         } else {
-            console.log("No Analysis, Summary or Resources was found on this page. ");
+            console.log("No Dashboard, Summary or Resources was found on this page. ");
         }
     } else {
         getNavLogin.hidden = false;
@@ -108,7 +104,7 @@ function display() {
             getResource4.hidden = true;
             getImagePanel.hidden = true;
         } else {
-            console.log("No Analysis, Summary or Resources was found on this page. ");
+            console.log("No Dashboard, Summary or Resources was found on this page. ");
         }
     }
 }
